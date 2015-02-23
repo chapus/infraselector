@@ -1,0 +1,441 @@
+/* CSS Document */
+
+/* CSS Document */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td,p { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset,img { border:0; }
+
+ol,ul { list-style:none; }
+
+div#inner-wrap{
+    margin: 0 auto;
+    width: 960px;
+    padding: 20px;
+}
+
+div {
+	display:block;
+}
+
+a {
+	color:#00468C;
+	text-decoration:underline;
+}
+
+img
+{
+vertical-align:text-top;
+}
+
+img.imgmiddle {
+	vertical-align:middle;
+}
+
+img.imgbottom {
+	vertical-align:text-bottom;
+}
+
+div.download a, div.download a:hover {
+	text-decoration:none;
+	font-size:95%;
+	font-weight:bold;
+	color:#333;
+	text-transform:uppercase;
+}
+
+html,
+body {
+   font-family: Verdana, Arial, Helvetica, sans-serif;
+   margin:0;
+   padding:0;
+   height:100%;
+   color: #333;
+   background:url(../../img/bg2.png) #CCC repeat-y center top;
+}
+
+#container {
+	clear:both;
+   min-height:100%;
+   width:100%;
+   position:absolute;
+   z-index:30 !important;
+}
+
+
+#content_inner {
+    width: 982px;
+    margin: auto;
+	
+}
+
+button {
+	color:#666666;	
+	border:solid 1px #e5e5e5;
+	background:#f3f3f3;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f3f3));
+	background: -moz-linear-gradient(top,  #ffffff,  #f3f3f3);
+	background: -o-linear-gradient(top,  #ffffff,  #f3f3f3);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f3f3f3');
+	-moz-box-shadow: 1px 1px 1px #d3d3d3;
+	-webkit-box-shadow: 1px 1px 1px #d3d3d3;
+	box-shadow: 1px 1px 1px #d3d3d3;	
+}
+
+button:hover {
+	border:solid 1px #e5e5e5;
+	color:#666666;	
+	background:#ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#ffffff));
+	background: -moz-linear-gradient(top,  #f3f3f3,  #ffffff);
+	background: -o-linear-gradient(top,  #f3f3f3,  #ffffff);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f3f3', endColorstr='#ffffff');
+}
+
+/*
+*
+*	START FOOTER
+*	
+*/
+
+#footer {
+	position:absolute;
+    clear: both;
+    width: 100%;
+	bottom:0;
+	height:120px;   /* Height of the footer */
+    
+}
+
+#footer-inner ul.ftr_33 li {
+    float: left;
+    width: 300px;
+    margin-right: 20px;
+	
+}
+
+#footer-inner ul.ftr_33 img {
+	padding:5px;
+}
+
+
+#footer-inner{
+    margin: auto;
+    padding-left: 20px;
+	/* padding-right: 20px; */
+	padding-top:20px;
+	padding-bottom:30px;
+    color: black;
+    font-size: 12px;
+    width: 978px;
+	background: #f5f5f5 url(../../img/footer_bottom3.png) repeat-x top   left;
+}
+
+#footer-inner2 {
+    margin: auto;
+    padding-left: 20px;
+	padding-right: 20px;
+    color: black;
+    font-size: 13px;
+    width: 978px;
+}
+
+#footer-inner a {
+        color: #00468C;
+		text-decoration:none;
+}
+
+#footer-inner a:hover {
+        color: #00468C;
+		text-decoration:underline;
+}
+
+#footer-inner2 a {
+        color: #00468C;
+		text-decoration:none;
+}
+
+#footer-inner2 a:hover {
+        color: #00468C;
+		text-decoration:underline;
+}
+
+#footer ul.ftr_100 {
+    float: left;
+    width: 978px;
+	padding-top:10px;
+    margin-right: 20px;
+	margin-left:20px;
+	text-align:center;
+}
+
+#footer ul.ftr_100 li {
+	padding-bottom:5px;
+}
+
+#footer-inner ul.ftr_33 ul.ftr_inner_50 {
+	margin-top:10px;
+}
+
+#footer-inner ul.ftr_33 ul.ftr_inner_50 li {
+	float:left;
+	width: 110px;
+	margin-left:20px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+#footer-inner ul.ftr_33 ul.ftr_inner_50_r {
+	margin-left:40px;
+	margin-top:10px;
+}
+
+#footer-inner ul.ftr_33 ul.ftr_inner_50_r li {
+	float:left;
+	width: 90px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+#footer-inner ul li p {
+    margin: 0;
+	text-align:center;
+    font-size: 12px;
+}
+
+#footer-inner h6 {
+    font-family: "Century Gothic", Arial;
+	font-weight:bold;
+	text-align:center;
+    color: #FA6D35;
+    font-size: 18px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+
+/*
+*
+*	END FOOTER
+*	
+*/
+
+
+
+/*
+*
+* START HEADER
+*
+*
+*/
+
+.cpright {
+	color:#999;
+	font-size:70%;
+	text-decoration:none;
+	text-align:left;
+}
+
+img.img_cpright {
+	vertical-align:text-bottom;
+}
+
+img.img_lefttop {
+	vertical-align:text-top;
+	float:left;
+	padding:20px;
+}
+
+img.img_complete {
+	margin:-10px;
+	margin-top:-85px;
+}
+
+
+
+.group:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+* html .group{
+    /* IE6 */
+    height:1%;
+}
+
+*:first-child+html .group{
+     /* IE7 */
+     min-height:1px;
+}
+
+/*
+*
+*
+* END HEADER
+*
+*/
+
+
+
+/*
+*
+* START LABELS
+*
+*/
+
+.txt_input_normal { float:left; display:block; font-weight:900; background:#FCF8EF; border:1px solid #000; padding:2px; margin-left:20px; margin-top:5px; margin-bottom:2px; width:150px;}
+
+label.lbl_normal { font-weight:normal; float:left; display:block; padding-right:4px; text-align:right; margin-left:10px; padding-top:4px; width:200px;}
+
+label.lbl_left {clear:left; display:block; float:left; font-weight:bold; padding-right:4px; text-align:left; margin-left:50px; width:200px;}
+
+label.lbl_right {clear:left; display:block; float:left; font-weight:normal; font-size:14px; padding-right:4px; text-align:left; margin-left:10px; width:140px;}
+
+.txt_input {background:#FFF; border:2px solid #666; padding:2px; margin-left:50px; margin-top:5px; margin-bottom:5px; width:200px;}
+
+.txt_input_cap {background:#eee; border:1px solid #CCC; font-weight:bold; padding:4px; margin-left:20px; margin-top:5px; margin-bottom:5px; width:320px;}
+
+.txt_input_cap_full {background:#eee; border:1px solid #CCC; font-weight:bold; padding:4px; margin-left:20px; margin-top:5px; margin-bottom:5px; width:590px;}
+
+.txt_input_search {background:#eee; border:1px solid #fff; font-size:18px; font-weight:bold; padding:4px; margin-left:20px;   width:250px;}
+
+
+/*
+*
+*	END LABELS
+*
+*/
+
+div.logged {
+	float:right;
+	margin-top:10px;
+	margin-right:68px;
+	border:#666666 solid 3px;
+	background-color:#CCCCCC;
+	padding:5px;
+	font-size:.8em;
+}
+
+/*
+*
+*	BOTONES
+*
+*/
+
+
+.btn_submit a,
+.btn_submit a:link,
+.btn_submit a:active,
+.btn_submit a:visited {color:#666; position:relative; top:-4px; text-decoration:none; }
+.btn_submit a:hover {color:#888;}
+.btn_submit {background:#d76300 url(../../img/header/bgsubmit.gif) repeat-x; border:0; color:#FFF; cursor:pointer; font-size:14px; height:24px; margin:4px 0 0 4px; text-align:center; vertical-align:middle; padding-left:10px; padding-right:10px; width:100%; -webkit-border-bottom-right-radius:8px; -webkit-border-bottom-left-radius:8px; -moz-border-radius-bottomright:8px; -moz-border-radius-bottomleft:8px; border-radius:0 0 8px 8px;}
+.btn_submit:hover {background:#f49000 url(../../img/header/bgsubmit.gif) repeat-x;}
+
+
+
+
+button {
+border: 0 none;
+cursor: pointer;
+padding: 0 15px 0 0;
+text-align: center;
+height: 30px;
+line-height: 30px;
+width: auto;
+}
+
+button.rounded {
+background: transparent url( ../../img/btns/btn_right.png ) no-repeat scroll right top;
+clear: left;
+font-size: 0.8em;
+}
+
+button span {
+display: block;
+padding: 0 0 0 15px;
+position: relative;
+white-space: nowrap;
+height: 30px;
+line-height: 30px;
+}
+
+button.rounded span {
+background: transparent url( ../../img/btns/btn_left.png ) no-repeat scroll left top;
+color: #FFFFFF;
+}
+
+button.rounded:hover {
+background-position: 100% -30px;
+}
+
+button.rounded:hover span {
+background-position: 0% -30px;
+}
+
+button::-moz-focus-inner {
+border: none;
+}
+
+
+/*
+*
+*  END BOTONES
+*
+*/
+
+
+
+/*
+* SEARCH PAGES
+*/
+
+div#search {
+	position:relative;
+	
+	padding-top:5px;
+	padding-left:20px;
+	padding-right:20px;
+	font-weight:bold;
+  	width:940px;
+	height:40px;
+	color:#333;
+	background: #C8DBA4 repeat top center;
+
+}
+/*
+* END SEARCH PAGES
+*/
+
+
+
+/*
+*   PAGGING
+*
+*/
+
+p.pagging {
+	font-size:80%;
+	color:#666;
+	margin-top:10px;
+	margin-left:10px;
+}
+
+div.paging {
+	padding:5px;
+}
+
+div.paging span {
+	color:#333;
+	font-size:12px;
+	margin-left:10px;
+}
+
+/*
+* END PAGGING
+*
+*/
+
+

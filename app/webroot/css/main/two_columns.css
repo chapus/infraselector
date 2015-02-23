@@ -1,0 +1,129 @@
+/* CSS Document */
+
+.left_box {
+	float:left;
+	border: 1px solid #CCC;
+	margin: 0px 0px 10px;
+	padding: 0px 0px 17px;
+	width:610px;
+}
+
+.right_box {
+	float:right;
+	border: 1px solid #CCC;
+	margin: 0px 0px 10px;
+	margin-left:11px;
+	padding: 0px 0px 5px;
+	width:290px;
+}
+
+.right_col {
+	float:right;
+	width:310px;
+	margin-left:11px;
+}
+
+
+
+div.box-content h3 {
+	background: #F1F1F2 url(../../img/header/bgtitle.gif) repeat-x;
+	color: #333;
+	text-transform:uppercase;
+	font-size: 18px;
+	font-weight: 900;
+	margin: 0px;
+	padding: 7px 0px 7px 15px;	
+}
+
+div.box-content h4 {
+	margin-left:20px;
+	margin-top:10px;
+}
+
+div.box-content h5 {
+	margin-left:30px;
+	font-weight:normal;
+	font-size:12px;
+}
+
+div.box-content div.line {
+	display:block;
+	width:95%;
+	height:1px;
+	margin-left:20px;
+	border-bottom:black 1px solid;
+}
+
+div.box-content .image {
+
+	margin-left:20px;
+}
+
+
+div.box-content .info {
+	padding:20px;
+	text-align:justify;
+	line-height:145%;
+	font-size:14px;
+}
+
+div.box-content .infralink {
+	margin-left:20px;
+}
+
+div.box-content .infralink a, div.box-content .infralink a:hover {
+	text-decoration:none;
+	font-weight:bold;
+	font-size:12px;
+}
+
+ul.bblist {
+	padding:8px;
+	margin-left:20px;
+	font-size:.9em;
+	line-height:150%;
+	list-style:none;
+}
+
+ul.list {
+	padding:8px;
+	font-size:.9em;
+	margin-left:5px;
+	line-height:150%;
+	list-style:none;
+}
+
+ul.list li {
+	background:url(../../img/icons/bullet_orange.png) left top no-repeat;
+}
+
+ul.list li a, ul.list li a:hover, ul.list li p {
+	margin-left:20px;
+	text-decoration:none;
+	color:#009;
+	
+}
+
+ul.bblist li {
+	background:url(../../img/icons/bullet_blue.png) left  center no-repeat;
+}
+
+ul.bblist li a, ul.bblist li a:hover, ul.bblist li p {
+	margin-left:20px;
+	text-decoration:none;
+	color:#009;
+	
+}
+
+
+div.footer_all {
+	float:right;
+	margin-right:10px;
+	font-size:12px;
+	font-style:italic;
+}
+
+div.footer_all a, footer_all a:hover {
+	text-decoration:none;
+	color:#CB5A07;
+}

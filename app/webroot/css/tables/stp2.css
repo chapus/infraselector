@@ -1,0 +1,198 @@
+/* CSS Document */
+
+#imgselection {
+	display:inline-block;
+	float:right;
+	width:270px;
+	margin-left:25px;
+}
+
+
+.infratbl {
+	font-size:12px;
+}
+
+.infratbl table a:link {color: #CC6633; }
+.infratbl table a:visited {color: #CC6633;}
+.infratbl table a:hover {color: #999966;}
+.infratbl table a:active {color: #CC6633;}
+.infratbl table a:focus{color: #CC6633;}
+
+.infratbl table a img {
+	padding-right:5px;
+	vertical-align:middle;
+	width:20px;
+	height:20px;
+}
+
+span.msg {
+	font-size:16px;	
+	font-weight:bold;
+}
+
+.infratbl table caption {
+		padding: 18px 2px 15px 2px;
+		color: #333333;
+		background-color: inherit;
+		font-weight: normal;
+		font-size:20px;
+		text-align: left;
+		text-transform: capitalize;
+		}
+
+	.infratbl table{
+		border: 1px solid #D9D9D9;
+		float:left;
+	}
+	.infratbl table tr td{
+		padding: 6px 9px;
+		text-align:left;
+
+	}
+	.infratbl table thead th{
+		background-color: #E5E5D8;
+		border-bottom: 1px solid #ccc;
+		border-left: 1px solid #D9D9D9;
+		font-weight: bold;
+		text-align:left;
+		padding: 16px 9px;
+		color:#592C16;
+	}
+	.infratbl table tbody tr th{
+		background-color: #fff;
+		font-weight: normal;
+		border-left: none;
+		padding: 6px 9px;
+		background-color: #E5E5D8;
+	}
+	
+	.infratbl table tbody tr.odd{
+		background-color: #F3F3F3;
+	}
+	
+	.infratbl table tbody tr.bold th{
+		font-weight:bold;
+	}
+	
+.infratbl table tbody tr:hover {
+	color: #333333;
+	background-color: #E5E5D8;
+}
+
+.infratbl table tbody tr.odd:hover {
+color: #333333;
+	background-color: #E5E5D8;
+}
+	
+	.infratbl table tfoot td, .infratbl table tfoot th{
+		border-top: 1px solid #ccc;
+		font-weight:bold;
+		color:#592C16;
+		padding: 5px;
+		
+	}
+
+
+td.campob {
+	color:#C63 !important;
+}
+	
+.fancybtn {
+background: #222 url(../../img/btns/alert-overlay.png) repeat-x;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #999;
+-webkit-box-shadow: 0 1px 3px #999;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+}
+
+.large.fancybtn, .large.fancybtn:visited {
+font-size: 14px;
+padding: 8px 14px 9px;
+}
+
+.size1 {
+	width:150px;
+}
+
+.size2 {
+	width:200px;
+}
+
+div.box {
+	float:left;
+	padding:5px;
+	width:100%;
+	border-bottom:1px solid #999;
+}
+
+div.box img {
+	vertical-align:middle;
+}
+
+div.box span {
+	text-align:center;
+	vertical-align:bottom;
+}
+
+
+div.sbox {
+	float:left;
+	padding:5px;
+}
+
+img.stpimg {
+	
+	width:48px;
+	height:48px;
+}
+
+
+
+table.customer {
+	margin:auto;
+}
+
+div.aviso {
+	float:right;
+	color:#000;
+}
+div.aviso a:hover {
+	color:#03F;
+	text-decoration:underline;
+}
+div.aviso a, div.aviso a:visited, div.aviso a:link {
+	color:#03F !important;
+	text-decoration:underline;
+}
+
+span.required {
+	color:red;
+}
+
+input.input {
+	padding:3px;
+	font-weight:bold;
+	color:#333333;
+}
+
+textarea.input {
+	padding:3px;
+	font-weight:bold;
+	color:#333333;
+}
+
+img.imgcentered {
+	display:block;
+	margin:auto;
+}
+

@@ -1,0 +1,129 @@
+/* CSS Document */
+
+
+table.adm_table {
+	width:98%;
+	margin-left:10px;
+	text-align:left;
+	font-size:12px;
+	border:#48A3D2 solid 1px;
+	border-spacing:0;
+}
+
+
+thead.adm_header {
+	background-color:#48A3D2;
+	font-size:12px;
+	border:#48A3D2 solid 1px;
+	color:#FFFFFF;
+}
+
+thead.adm_header tr {
+	height:30px;
+}
+
+thead.adm_header a, thead.adm_header a:hover {
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+tbody.item {
+	cursor:pointer;
+}
+
+tbody.item tr td {
+	padding:2px;
+}
+
+tbody.item tr.trow {
+	background-color:#F0F0F0;
+}
+
+tbody.item img.imagen {
+	width:40px;
+	height:40px;
+	padding:3px;
+}
+
+tbody.item img.icons {
+	padding:3px;
+}
+
+tbody.item tr td a, tbody.item tr td a:hover {
+	text-decoration:none;
+	font-weight:bold;
+}
+
+div.search {
+	display:inline-table;
+	width:600px;
+	padding:10px;
+	margin-left:20px;
+	margin-bottom:25px;
+	background-color:#EBEBEB;
+	border:#666 solid 1px;
+}
+
+div.search .stitle {
+	text-align:left !important;
+	font-weight:bold;
+}
+
+div.search .input.text label {
+	font-size:12px;
+	display:inline-table;
+	text-align:right;
+	vertical-align:middle;
+	margin-right:25px;
+	width:200px;
+}
+
+div.search .input.text {
+	float:left;
+	width: 80%;
+	line-height:160%;
+}
+
+div.search .input.checkbox {
+	float:left;
+	width: 140px;
+	line-height:160%;
+}
+
+div.search .input.checkbox label {
+	font-size:12px;
+	display:inline-table;
+	text-align:center;
+	vertical-align:middle;
+	font-weight:900;
+
+}
+
+div.search .input.checkbox input {
+	display:block;
+	margin-top:5px;
+	margin-left:25px;
+}
+
+div.search .submit {
+	float:right;
+	margin-right:10px;
+	
+}
+
+div.admin {
+	float:right;
+	width: 250px;
+	background-color:#EBEBEB;
+	border:#666 solid 1px;
+	margin-right:25px;
+}
+
+div.admin a, div.admin a:hover {
+	text-decoration:none;
+}
+
+div.admin button {
+	margin:5px;
+}
+

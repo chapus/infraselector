@@ -1,0 +1,664 @@
+/* CSS Document */
+
+.ui-tabs-nav {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:12px !important;
+}
+
+div.subtitle {
+	font-size:12px !important;
+}
+
+div.headtitle h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:24px;
+	margin-bottom:10px; 
+	padding-top:10px;
+}
+
+div.headtitle h2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:12px;
+	line-height:120%;
+	font-weight:500;
+}
+
+div.headtitle h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:12px;
+	line-height:120%;
+	font-weight:normal;
+}
+
+div.headtitle img {
+	display:block;
+	float:left;
+	width:50px;
+	height:50px;
+	margin:5px;
+}
+
+select {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:12px;
+	font-weight:bold;
+	width:477px;
+	padding:2px;
+	background-color:#FFFFFF;
+}
+
+div.selector {
+	display:inline-block;
+	margin-left:50px;
+}
+
+div.space {
+	display:inherit;
+	margin:10px;
+}
+
+div.step {
+	width:882px;
+	height:253px;
+	background:url(../../img/selector/bg_box.png) no-repeat;
+}
+
+div.step div.left {
+	float:left;
+	background:url(../../img/selector/left.png) no-repeat;
+	width:122px;
+	height:251px;
+}
+
+div.step div.left div.paso {
+	float:left;
+	margin-left:25px;
+	margin-top:25px;
+	margin-bottom:10px;
+}
+
+div.step div.left div.loader {
+	float:left;
+	background:url(../../img/loader3.gif) no-repeat;
+	width:31px;
+	height:31px;
+	margin-left:42px;
+	margin-top:25px;
+}
+
+div.step div.right div.loader {
+	position:absolute;
+	background:url(../../img/bigloader.gif) no-repeat;
+	width:84px;
+	height:64px;
+	margin-top:100px;
+	margin-left:65px;
+	
+}
+
+div.step div.left div.number {
+	float:left;
+	width:74px;
+	height:47px;
+	margin-left:23px;
+	
+}
+
+div.step div.left div.green {
+	background:url(../../img/selector/box_number.png) no-repeat;
+	
+}
+
+div.step div.left div.red {
+	background:url(../../img/selector/box_number_red.png) no-repeat;
+	
+}
+
+div.step div.left div.blue {
+	background:url(../../img/selector/box_number_blue.png) no-repeat;
+}
+div.step div.left div.orange {
+	background:url(../../img/selector/box_number_orange.png) no-repeat;
+}
+
+div.step div.left div.number span.text {
+	float:left;
+	margin-top:14px;
+	margin-left:34px;
+	font-weight:bold;
+}
+
+
+
+
+div.step div.center {
+	float:left;
+	width:483px;
+	height:251px;
+	padding:6px;
+}
+
+div.step div.center div.title {
+	float:left;
+	width:100%;
+	font-weight:bold;
+	font-size:12px;
+}
+
+div.step div.center div.select {
+	float:left;
+	width:100%;
+}
+
+div.step div.center div.info {
+	float:left;
+	width:100%;
+	height:197px;
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:11px !important;
+	color:#333;
+	line-height:140%;
+	overflow:auto;
+	text-align:justify;
+}
+
+
+
+div.step div.right {
+	float:right;
+	background:url(../../img/selector/right.png) no-repeat;
+	width:222px;
+	height:251px;
+	margin-right:40px;
+}
+
+div.step div.right div.title {
+	float:left;
+	width:97%;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:8px;
+	padding-top:8px;
+}
+
+div.step div.right div.image {
+	float:left;
+	width:180px;
+	height:180px;
+	margin-left:13px;
+}
+
+div.step div.right div.special img {
+	width:180px;
+	height:180px;
+}
+
+
+div.step div.faright {
+	position:absolute;
+	width:30px;
+	height:251px;
+	margin-left:845px;
+	margin-top:10px;
+	overflow:hidden;
+}
+
+div.step div.faright div {
+	display:block;
+	margin-bottom:15px;
+}
+
+div.step div.faright div a {
+	display:none;
+}
+
+
+
+/*
+small step
+*/
+
+div.ovinfo div.info {
+	overflow:hidden !important;
+}
+
+div.smallstep {
+	width:882px;
+	height:153px;
+	background:url(../../img/selector/bg_boxsmall.png) no-repeat;
+}
+
+div.smallstep div.left {
+	float:left;
+	background:url(../../img/selector/left.png) no-repeat;
+	width:122px;
+	height:151px;
+}
+
+div.smallstep div.left div.paso {
+	float:left;
+	margin-left:25px;
+	margin-top:25px;
+	margin-bottom:10px;
+}
+
+div.smallstep div.left div.loader {
+	float:left;
+	background:url(../../img/loader3.gif) no-repeat;
+	width:31px;
+	height:31px;
+	margin-left:42px;
+	margin-top:13px;
+}
+
+div.smallstep div.right div.loader {
+	position:absolute;
+	background:url(../../img/bigloader.gif) no-repeat;
+	width:84px;
+	height:64px;
+	margin-top:50px;
+	margin-left:65px;
+	
+}
+
+div.smallstep div.left div.number {
+	float:left;
+	width:74px;
+	height:47px;
+	margin-left:23px;
+	
+}
+
+div.smallstep div.left div.green {
+	background:url(../../img/selector/box_number.png) no-repeat;
+	
+}
+
+div.smallstep div.left div.red {
+	background:url(../../img/selector/box_number_red.png) no-repeat;
+	
+}
+
+div.smallstep div.left div.blue {
+	background:url(../../img/selector/box_number_blue.png) no-repeat;
+	
+}
+div.smallstep div.left div.orange {
+	background:url(../../img/selector/box_number_orange.png) no-repeat;
+	
+}
+
+div.smallstep div.left div.number span.text {
+	float:left;
+	margin-top:14px;
+	margin-left:34px;
+	font-weight:bold;
+}
+
+
+
+
+div.smallstep div.center {
+	float:left;
+	width:483px;
+	height:151px;
+	padding:6px;
+}
+
+div.smallstep div.center div.title {
+	float:left;
+	width:100%;
+	font-weight:bold;
+	font-size:12px;
+}
+
+div.smallstep div.center div.select {
+	float:left;
+	width:100%;
+}
+
+div.smallstep div.center div.info {
+	float:left;
+	width:100%;
+	height:97px;
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:11px !important;
+	color:#333;
+	line-height:140%;
+	overflow:auto;
+	text-align:justify;
+}
+
+
+
+div.smallstep div.right {
+	float:right;
+	background:url(../../img/selector/right.png) no-repeat;
+	width:222px;
+	height:151px;
+	margin-right:40px;
+}
+
+div.smallstep div.right div.title {
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	padding-left:8px;
+	padding-top:8px;
+}
+
+div.smallstep div.right div.image {
+	float:left;
+	width:180px;
+	height:80px;
+	margin-left:13px;
+}
+
+div.smallstep div.right div.image img {
+	width:180px;
+	height:100px;
+}
+
+
+div.smallstep div.faright {
+	position:absolute;
+	width:30px;
+	height:151px;
+	margin-left:845px;
+	margin-top:10px;
+	overflow:hidden;
+}
+
+div.smallstep div.faright div {
+	display:block;
+	margin-bottom:15px;
+}
+
+div.smallstep div.faright div a {
+	display:none;
+}
+
+/*
+small step
+*/
+
+
+div.btn.ntrdy {
+	display:block;
+	width:882px;
+	height:66px;
+	background:url(../../img/icons/btngray.png) no-repeat;
+}
+
+div.btn.rdy {
+	display:block;
+	width:882px;
+	height:66px;
+	background:url(../../img/icons/btn.png) no-repeat;
+}
+
+div.btn.rdyred {
+	display:block;
+	width:882px;
+	height:66px;
+	background:url(../../img/icons/btnred.png) no-repeat;
+}
+
+div.btn.rdyblue {
+	display:block;
+	width:882px;
+	height:66px;
+	background:url(../../img/icons/btnblue.png) no-repeat;
+}
+
+div.btn.rdyyellow {
+	display:block;
+	width:882px;
+	height:66px;
+	background:url(../../img/icons/btnyellow.png) no-repeat;
+}
+
+/*
+alternativos
+*/
+
+div#tab_alternativos {
+	width:878px;
+}
+
+
+/*
+protecciones
+*/
+
+div#tabs {
+	width:878px;
+}
+
+div.tabobj {
+	display:inline-block;
+	float:left;
+	width:175px;
+	padding:5px;
+	margin-right:10px;
+	margin-bottom:10px;
+	border:#999999 1px solid;
+}
+
+div.tabobj span {
+	display:block;
+	font-size:10px;
+	width:175px;
+	margin:1px;
+	padding:1px;
+}
+
+div.tabobj span a, div.tabobj span a:hover {
+	display:block;
+	font-size:10px;
+	color:#0066FF;
+	text-decoration:none;
+}
+
+div.tabobj div.divimg {
+	display:block;
+	float:left;
+	width:175px;
+	height:125px;
+}
+
+img.imgobj {
+	width:125px;
+	height:125px;
+	margin-left:25px;
+}
+
+div.objclear {
+	font-family: Verdana, Arial, Helvetica, sans-serif !important;
+	font-size:12px;
+	display:inline-block;
+	clear:both;
+}
+
+
+/*
+ * CONDICION CALIDAD
+*/
+
+div#ccalidad {
+	position:absolute;
+	border:black 1px solid;
+	background-color:#FFFF66;
+	color:black;
+	width:216px;
+	padding:2px;
+	margin-top:180px;
+	line-height:120%;
+}
+
+/*
+ * RANGO DE AMPERAJE
+*/
+
+div#amperaje {
+	position:absolute;
+	border:black 1px solid;
+	background-color:#FFFF66;
+	color:black;
+	width:216px;
+	padding:2px;
+	margin-top:118px;
+	line-height:120%;
+	text-align:left;
+}
+
+
+/*
+ * ACCESORIOS
+*/
+
+div#accesorio {
+	position:absolute;
+	font-size:90%;
+	border:black 1px solid;
+	background-color:#FFFF66;
+	color:black;
+	width:255px;
+	padding:2px;
+	margin-top:155px;
+	line-height:120%;
+	text-align:left;
+}
+
+
+/*
+ * maquinas por tipo
+*/
+
+div.mt_ligero {
+	float:left;
+	width:160px;
+	height:150px;
+	background: #339900 ;
+}
+
+div.mt_normal {
+	float:left;
+	width:160px;
+	height:150px;
+	background: #FF6600 ;
+}
+
+div.mt_pesado {
+	float:left;
+	width:160px;
+	height:150px;
+	background: #990033  ;
+}
+
+
+/*
+* MAQUINAS DE SOLDAR CICLOS DE TRABAJO INFO
+*/
+div.left div.c_holder {
+	position:relative;
+	text-align:center !important;
+	color:#FFFFFF;
+	font-weight:bold;
+	cursor:default;
+}
+
+div.c_holder div.cc1 {
+	position:absolute;
+	top:155px;
+	left:1px;
+	width:115px;
+	height:20px;
+background: #339900;
+background: -moz-linear-gradient(top,  #339900 0%, #339900 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#339900), color-stop(100%,#339900));
+background: -webkit-linear-gradient(top,  #339900 0%,#339900 100%);
+background: -o-linear-gradient(top,  #339900 0%,#339900 100%);
+background: -ms-linear-gradient(top,  #339900 0%,#339900 100%);
+background: linear-gradient(top,  #339900 0%,#339900 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#339900', endColorstr='#339900',GradientType=0 );
+
+	padding:3px 3px 3px 3px;
+}
+div.c_holder div.cc2 {
+	position:absolute;
+	top:185px;
+	left:1px;
+	width:115px;
+	height:20px;
+background: #FF6600;
+background: -moz-linear-gradient(top,  #FF6600 0%, #FF6600 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF6600), color-stop(100%,#FF6600));
+background: -webkit-linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+background: -o-linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+background: -ms-linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+background: linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF6600', endColorstr='#FF6600',GradientType=0 );
+
+	padding:3px 3px 3px 3px;
+}
+div.c_holder div.cc3 {
+	position:absolute;
+	top:215px;
+	left:1px;
+	width:115px;
+	height:20px;
+background: #990033;
+background: -moz-linear-gradient(top,  #990033 0%, #990033 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#990033), color-stop(100%,#990033));
+background: -webkit-linear-gradient(top,  #990033 0%,#990033 100%);
+background: -o-linear-gradient(top,  #990033 0%,#990033 100%);
+background: -ms-linear-gradient(top,  #990033 0%,#990033 100%);
+background: linear-gradient(top,  #990033 0%,#990033 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#990033', endColorstr='#990033',GradientType=0 );
+
+	padding:3px 3px 3px 3px;
+}
+
+div.cc1_info {
+	position:absolute;
+background: #339900;
+background: -moz-linear-gradient(top,  #339900 0%, #339900 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#339900), color-stop(100%,#339900));
+background: -webkit-linear-gradient(top,  #339900 0%,#339900 100%);
+background: -o-linear-gradient(top,  #339900 0%,#339900 100%);
+background: -ms-linear-gradient(top,  #339900 0%,#339900 100%);
+background: linear-gradient(top,  #339900 0%,#339900 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#339900', endColorstr='#339900',GradientType=0 );
+	left:121px;
+	padding:12px;
+}
+
+div.cc2_info {
+	position:absolute;
+background: #FF6600;
+background: -moz-linear-gradient(top,  #FF6600 0%, #FF6600 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF6600), color-stop(100%,#FF6600));
+background: -webkit-linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+background: -o-linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+background: -ms-linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+background: linear-gradient(top,  #FF6600 0%,#FF6600 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF6600', endColorstr='#FF6600',GradientType=0 );
+
+	left:121px;
+	padding:12px;
+}
+div.cc3_info {
+	position:absolute;
+background: #990033;
+background: -moz-linear-gradient(top,  #990033 0%, #990033 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#990033), color-stop(100%,#990033));
+background: -webkit-linear-gradient(top,  #990033 0%,#990033 100%);
+background: -o-linear-gradient(top,  #990033 0%,#990033 100%);
+background: -ms-linear-gradient(top,  #990033 0%,#990033 100%);
+background: linear-gradient(top,  #990033 0%,#990033 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#990033', endColorstr='#990033',GradientType=0 );
+
+	left:121px;
+	padding:12px;
+}

@@ -1,0 +1,18 @@
+/* CSS Document */
+
+div.growlUI { background: url(../../img/blockui/infra.png) no-repeat 10px 10px; opacity:1; }
+div.growlUI h1, div.growlUI h2 {
+	color: #FA8B22; padding: 5px 5px 5px 75px; text-align: left;
+	font-size:24px;
+}
+
+.flash_failure {
+	font-size:18px;
+	color: #FFFFFF;
+}
+
+.flash_success {
+	font-size:18px;
+	color: #FFFFFF;
+}
+

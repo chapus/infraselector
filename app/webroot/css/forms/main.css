@@ -1,0 +1,171 @@
+/* CSS Document */
+
+div.input.text, div.input.password, div.input.textarea, div.input.select, div.input.file {
+	padding-left:10px;
+	padding-top:10px;
+	
+}
+
+div.input label {
+	display:inline-table;
+	width:150px;
+	font-weight:900;
+	text-align:right;
+	vertical-align:middle;
+}
+
+div.input.textarea label {
+	display:inline-table;
+	width:150px;
+	font-weight:900;
+	text-align:left;
+	vertical-align:top;
+}
+
+div.input.select label {
+	display:inline-table;
+	width:150px;
+	font-weight:900;
+	text-align:right;
+	vertical-align:top;
+}
+
+div.input.text input {
+	padding:3px;
+	margin-left:25px;
+	color:#0033FF;
+	font-weight:bold;
+	border:#009 solid 1px;
+	background-color:#f5f5f5;
+	width:300px;
+}
+
+div.input.password input {
+	padding:3px;
+	margin-left:25px;
+	color:#0033FF;
+	font-weight:bold;
+	border:#900 solid 2px;
+	background-color:#f5f5f5;
+	width:300px;
+}
+
+div.input.file input {
+	padding:3px;
+	margin-left:25px;
+	color:#0033FF;
+	font-weight:bold;
+	border:#333 solid 2px;
+	background-color:#CCCCCC;
+	width:300px;
+}
+
+
+div.input.textarea textarea {
+	padding:3px;
+	margin-left:25px;
+	color:#0033FF;
+	font-weight:bold;
+	border:#009 solid 1px;
+	background-color:#f5f5f5;
+	width:350px;
+}
+
+div.input.select select {
+	padding:3px;
+	margin-left:25px;
+	color:#333333;
+	font-weight:bold;
+	border:#009 solid 1px;
+	background-color:#f5f5f5;
+	width:520px;
+}
+
+
+div.input.checkbox {
+	width:200px;
+	margin-left:20px;
+	margin-top:5px;
+	padding:10px;
+	border:#999999 dashed 1px;
+}
+
+div.input.checkbox input {
+	float:right;
+	margin-top:10px;
+}
+
+div.mig_color {
+	margin:5px;
+	border:#000000 dotted 2px;
+	background-color:#B4E2BE;
+}
+
+div.tig_color {
+	margin:5px;
+	border:#000000 dotted 2px;
+	background-color:#F9BDBD;
+}
+
+div.smaw_color {
+	margin:5px;
+	border:#000000 dotted 2px;
+	background-color:#AED5F4;
+}
+
+div.pac_color {
+	margin:5px;
+	border:#000000 dotted 2px;
+	background-color:#E1A543;
+}
+
+div.smaw_merge {
+	border:#0099FF 1px solid;
+	background-color:#0099FF;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+div.smaw_merge span {
+	display:inline-block;
+	font-weight:bold;
+	margin-left:20px;
+}
+
+div.mig_merge {
+	border:#00CC66 1px solid;
+	background-color:#0C6;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+div.mig_merge span {
+	display:inline-block;
+	font-weight:bold;
+	margin-left:20px;
+}
+
+
+div.inputmsg {
+	color:#333;
+	line-height:150%;
+	margin-left: 187px;
+	font-size:12px;
+	width:300px;
+	text-align:justify;
+}
+
+div.inputmsg2 {
+	color:#333;
+	line-height:150%;
+	margin-left: 15px;
+	font-size:12px;
+	width:580px;
+	text-align:justify;
+}
+
+div.submit {
+	margin-top:20px;
+	margin-left:190px;
+	margin-bottom:20px;
+}

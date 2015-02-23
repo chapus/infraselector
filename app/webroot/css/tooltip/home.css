@@ -1,0 +1,52 @@
+/* CSS Document */
+
+div.hidder {
+	display:none;
+}
+
+div.attention {
+	font-size:140%;
+}
+
+.tooltip1 {
+	display:none;
+	background:transparent url(../../img/tooltip/white_big.png);
+	font-size:12px;
+	color:#000;
+	height:145px;
+	width:321px;
+	padding:25px;
+	padding-top:40px;
+	z-index:500 !important;
+}
+
+.tooltip1 div.box {
+	float:left;
+	padding:20px 5px 5px 5px;
+}
+
+.tooltip2 {
+	display:none;
+	background:transparent url(../../img/tooltip/white_big.png);
+	font-size:12px;
+	color:#000;
+	height:145px;
+	width:321px;
+	padding:25px;
+	z-index:500 !important;
+}
+
+.tooltip3 {
+	display:none;
+	background:transparent url(../../img/tooltip/white_big.png);
+	font-size:12px;
+	color:#000;
+	height:145px;
+	width:321px;
+	padding:25px;
+	z-index:500 !important;
+}
+
+.shover {
+	background-color:#FFF4E8;
+}
