@@ -94,6 +94,21 @@ class Regulador extends AppModel {
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
+		'MigAlternativo' => array(
+			'className' => 'Alternativo',
+			'joinTable' => 'mig_alternativo_reguladors',
+			'foreignKey' => 'regulador_id',
+			'associationForeignKey' => 'alternativo_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'MigProteccione' => array(
 			'className' => 'Proteccione',
 			'joinTable' => 'mig_proteccione_reguladors',

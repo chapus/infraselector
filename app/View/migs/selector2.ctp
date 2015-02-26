@@ -180,7 +180,13 @@ $(document).ready(function() {
 
 <tr>
 	<th>Antorcha</th>
-	<td><?= $antorcha['Antorcha']['name']." <span class='pcod'>Código  ".$antorcha['Antorcha']['codigo']." </span>".$this->Html->link('Más información', '#antorcha', array('class' => 'sendto', 'id' => 'vant')); ?></td>
+	<td><?php
+	if($antorcha['Antorcha']['name'] == "N/A") {
+		echo $antorcha['Antorcha']['description'];
+	} else {
+		echo $antorcha['Antorcha']['name']." <span class='pcod'>Código  ".$antorcha['Antorcha']['codigo']." </span>".$this->Html->link('Más información', '#antorcha', array('class' => 'sendto', 'id' => 'vant'));
+	}
+	  ?></td>
 </tr>
 
 <tr class="odd">
@@ -191,6 +197,19 @@ $(document).ready(function() {
 <tr>
 	<th>Regulador</th>
 	<td><?= $regulador['Regulador']['name']." <span class='pcod'>Código  ".$regulador['Regulador']['codigo']." </span>".$this->Html->link('Más información', '#regulador', array('class' => 'sendto', 'id' => 'vreg')); ?></td>
+</tr>
+
+<tr>
+	<th>Equipos Alternativos</th>
+    <td>
+    <?php
+	$i = 1;
+	foreach($alternativos as $alternativo) {
+		echo "<div class='box'>".$this->Html->image('/'.$alternativo['Alternativo']['smallimage'], array('class' => 'stpimg') ).$alternativo['Alternativo']['name']." <span class='pcod'>Código  ".$alternativo['Alternativo']['codigo']." </span>".$this->Html->link('Más información', '#', array('class' => 'sendto', 'id' => 'valter'.$i))."</div>";
+		$i++;
+	}
+	?>
+    </td>
 </tr>
 
 <tr>
@@ -241,10 +260,18 @@ $(document).ready(function() {
     <?php
 	} // if Microalambre
 	?>
+
+    <?php
+	if($antorcha['Antorcha']['name'] != "N/A") {
+	?>
     <tr class="bold" id="antorcha"><th><?= $antorcha['Antorcha']['name']." <span class='pcodimg'>Código  ".$antorcha['Antorcha']['codigo']." </span>"; ?></th></tr>
     <tr>
         <td><?= $this->Html->image('/'.$antorcha['Antorcha']['smallimage']); ?></td>
     </tr>
+    <?php
+	} // if antorcha
+	?>
+
     <tr class="bold" id="aporte"><th><?= $aporte['Aporte']['name']." <span class='pcodimg'>Código  ".$aporte['Aporte']['codigo']." </span>"; ?></th></tr>
     <tr>
         <td><?php 

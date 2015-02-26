@@ -27,7 +27,7 @@ $('#MigAddForm').submit(function(e) {
 		'st6' : $('#MigAntorchas option:selected').val(),
 		'st7' : $('#MigAportes option:selected').val(),
 		'st8' : $('#MigReguladores option:selected').val(),
-		'st9' : $('#MigProtecciones option:selected').val()
+		'st9' : $('#MigAlternativos option:selected').val()
 		},
 		type: 'POST',
 		dataType: 'html',
@@ -266,7 +266,21 @@ $("#MigReguladores").change(function() {
 	$("#MigReguladores").fReguladores();
 });   
 $.fn.fReguladores = function() {
-	
+	$.ajax({
+		url: path+'migs/s8_info',
+		data: {'id' : $('#MigReguladores option:selected').val()},
+		type: 'POST',
+		dataType: 'json',
+		success: function (data) {
+				$("#MigAlternativos").removeOption(/./);
+				$("#MigAlternativos").attr('disabled', false);
+				for(i = 0; i < data.length; i++) {
+					$.each(data[i].MigAlternativo, function() {
+						$("#MigAlternativos").addOption(this.id, this.name, false);
+					});
+				}
+		}
+	});	
 }
       
    
@@ -296,7 +310,7 @@ echo $this->Form->input('microalambres', array('type' => 'select', 'empty' => tr
 echo $this->Form->input('antorchas', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('aportes', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('reguladores', array('type' => 'select', 'empty' => true, 'disabled' => true) );
-
+echo $this->Form->input('alternativos', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 
 echo $this->Form->end('Submit');
 ?>

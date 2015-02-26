@@ -231,26 +231,25 @@ $("#TigReguladores").change(function() {
 	$("#TigReguladores").fReguladores();
 });   
 $.fn.fReguladores = function() {
-	   
-			$.ajax({
-				url: path+'tigs/s8_info',
-				data: {'id' : $('#TigReguladores option:selected').val()},
-				type: 'POST',
-				dataType: 'json',
-				success: function (data) {
-						$("#TigAlternativos").removeOption(/./);
-						$("#TigAlternativos").attr('disabled', false);
-						for(i = 0; i < data.length; i++) {
-							$.each(data[i].TigAlternativo, function() {
-								if(data[i].TigAlternativo.length != 1) {
-									$("#TigAlternativos").addOption(this.id, this.name, false);
-								} else {
-									$("#TigAlternativos").addOption(this.id, this.name);
-								}
-							});
+	$.ajax({
+		url: path+'tigs/s8_info',
+		data: {'id' : $('#TigReguladores option:selected').val()},
+		type: 'POST',
+		dataType: 'json',
+		success: function (data) {
+				$("#TigAlternativos").removeOption(/./);
+				$("#TigAlternativos").attr('disabled', false);
+				for(i = 0; i < data.length; i++) {
+					$.each(data[i].TigAlternativo, function() {
+						if(data[i].TigAlternativo.length != 1) {
+							$("#TigAlternativos").addOption(this.id, this.name, false);
+						} else {
+							$("#TigAlternativos").addOption(this.id, this.name);
 						}
+					});
 				}
-			});		
+		}
+	});		
 }
 
 
@@ -272,7 +271,7 @@ echo $this->Form->create('Tig');
 
 
 echo $this->Form->input('materials', array('empty' => true) );
-echo $this->Html->tag('div', '', 's1load');
+echo $this->Html->tag('div', '', array('class' => 's1load') );
 
 echo $this->Form->input('calibres', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('gases', array('type' => 'select', 'empty' => true, 'disabled' => true) );

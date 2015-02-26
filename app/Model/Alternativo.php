@@ -62,6 +62,36 @@ class Alternativo extends AppModel {
 			'finderQuery' => '',
 			'deleteQuery' => '',
 			'insertQuery' => ''
+		),
+		'MigRegulador' => array(
+			'className' => 'Regulador',
+			'joinTable' => 'mig_alternativo_reguladors',
+			'foreignKey' => 'alternativo_id',
+			'associationForeignKey' => 'regulador_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
+		'MigProteccione' => array(
+			'className' => 'Proteccione',
+			'joinTable' => 'mig_alternativo_protecciones',
+			'foreignKey' => 'alternativo_id',
+			'associationForeignKey' => 'proteccione_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
 		)
 	);
 

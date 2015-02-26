@@ -152,8 +152,9 @@ foreach($data as $dat) {
           <td><?= date("F j, Y", strtotime($dat['Maquina']['created'])); ?></td>
           
           <td><?php 
+          //debug($this->request->url);
 		  echo $this->Html->link('Ver', array('controller' => '', 'action' => 'maquinasdesoldar', $dat['Maquina']['id']))."<br />"; 
-		  echo $this->Html->link('Editar', array('controller' => 'maquinas', 'action' => 'edit', $dat['Maquina']['id'].'/'.str_replace(array('/', ':'), array('_', '-'), $this->params['url']['url']) ))."<br />"; 
+		  echo $this->Html->link('Editar', array('controller' => 'maquinas', 'action' => 'edit', $dat['Maquina']['id'].'/'.str_replace(array('/', ':'), array('_', '-'), $this->request->url) ))."<br />"; 
 		  ?></td>
         </tr>
 <?php
@@ -165,14 +166,14 @@ foreach($data as $dat) {
 <p class="pagging">
 <?php
 echo $this->Paginator->counter(array(
-'format' => __('Página %page% de %pages%, mostrando %current% maquinas de lámina de %count% en total, empezando del calibre de lámina %start%, al %end%', true)
+'format' => __('Página %page% de %pages%, mostrando %current% maquinas de lámina de %count% en total, empezando del calibre de lámina %start%, al %end%')
 ));
 ?>	</p>
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('Anterior'), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('Siguiente') . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 
 </div>

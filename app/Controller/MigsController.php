@@ -5,7 +5,7 @@ class MigsController extends AppController {
 	
 	var $components = array('RequestHandler', 'Session', 'Email');
 	
-	var $uses = array('Mig', 'Material', 'Calibre', 'Gase', 'Aporte', 'Maquina', 'Microalambre', 'Antorcha', 'Regulador', 'Proteccione', 'Seccion', 'MigCalibreCalidadgase', 'MigCalidadgaseGase', 'Calidadgase', 'Ciudade');
+	var $uses = array('Mig', 'Material', 'Alternativo', 'Calibre', 'Gase', 'Aporte', 'Maquina', 'Microalambre', 'Antorcha', 'Regulador', 'Proteccione', 'Seccion', 'MigCalibreCalidadgase', 'MigCalidadgaseGase', 'Calidadgase', 'Ciudade');
 	
 	function s1() {
 		$result = array();
@@ -298,8 +298,6 @@ class MigsController extends AppController {
 				
 			}
 		}
-		Configure::write('debug', 0);
-		exit();	
 	}
 	
 	
@@ -323,7 +321,7 @@ class MigsController extends AppController {
 				$this->Regulador->Behaviors->attach('Containable');
 				
 				$result = $this->Regulador->find('all', array(
-				'contain' => array('MigProteccione.name', 'MigProteccione.id'),
+				'contain' => array('MigAlternativo.codigo', 'MigAlternativo.name', 'MigAlternativo.id'),
 				'fields' => array('Regulador.short', 'Regulador.description', 'Regulador.infra_link'),
 				'conditions' => array('Regulador.pmig' => 1, 'Regulador.id' => $_POST['id']),
 				'order' => 'Regulador.name ASC'));
@@ -332,8 +330,6 @@ class MigsController extends AppController {
 				
 			}
 		}
-		Configure::write('debug', 0);
-		exit();	
 	}
 	
 	
@@ -799,6 +795,40 @@ class MigsController extends AppController {
 		Configure::write('debug', 0);
 		exit();	
 	}
+
+	/*
+	* Trae los alternativos a la seleccion MIG cuando hay un regulador
+	*
+	*/
+	function alternativos() {
+		if($this->RequestHandler->isAjax()) {
+			if($_SERVER['REQUEST_METHOD'] == "POST") {
+				$this->autoRender = false;
+				
+				$result = array();
+				
+				$alternativos = $this->Mig->find('all', array(
+					'fields' => array('DISTINCT Mig.alternativo_id'),
+					'conditions' => array('Mig.material_id' => $_POST['matid'], 'Mig.calibre_id' => $_POST['calibreid'], 'Mig.gase_id' => $_POST['gasid'],
+					'Mig.maquina_id' => $_POST['maqid'], 'Mig.aporte_id' => $_POST['apoid'], 'Mig.antorcha_id' => $_POST['antoid'], 'Mig.regulador_id' => $_POST['id']),
+					'order' => array('Mig.alternativo_id ASC')
+				));
+				
+				$this->Alternativo->recursive = -1;
+				
+				foreach($alternativos as $alternativo) {
+					$hold = $this->Alternativo->find('first', array(
+						'conditions' => array('Alternativo.pmig' => 1, 'Alternativo.id' => $alternativo['Mig']['alternativo_id']),
+						'fields' => array('Alternativo.id', 'Alternativo.name', 'Alternativo.description', 'Alternativo.shortdescription', 'Alternativo.smallimage')
+					));
+					array_push($result,$hold);
+				}
+				
+				return(json_encode($result));
+				
+			}
+		}
+	}
 	
 	
 	function selectorStep9() {
@@ -918,7 +948,8 @@ function saveSelection() {
 					'microalambre_id' => $_POST['st5'],
 					'antorcha_id' => $_POST['st6'],
 					'aporte_id' => $_POST['st7'],
-					'regulador_id' => $_POST['st8']
+					'regulador_id' => $_POST['st8'],
+					'alternativo_id' => $_POST['st9']
 					)
 				));
 				
@@ -933,6 +964,7 @@ function saveSelection() {
 						'antorcha_id' => $_POST['st6'],
 						'aporte_id' => $_POST['st7'],
 						'regulador_id' => $_POST['st8'],
+						'alternativo_id' => $_POST['st9'],
 						'creator_id' => $admin['iduser']
 					));
 					
@@ -954,7 +986,7 @@ function saveSelection() {
 }
 
 
-function selector2($step = null, $mat = null, $matid = null, $cal = null, $calid = null, $gas = null, $gasid = null, $maq = null, $maqid = null, $micro = null, $microid = null, $ant = null, $antid = null, $apo = null, $apoid = null, $reg = null, $regid = null, $prot = null, $protids = null) {
+function selector2($step = null, $mat = null, $matid = null, $cal = null, $calid = null, $gas = null, $gasid = null, $maq = null, $maqid = null, $micro = null, $microid = null, $ant = null, $antid = null, $apo = null, $apoid = null, $reg = null, $regid = null, $alt = null, $altids = null, $prot = null, $protids = null) {
 	
 	
 	$valid = $this->Mig->find('first', array(
@@ -1018,6 +1050,19 @@ function selector2($step = null, $mat = null, $matid = null, $cal = null, $calid
 		$regulador = $this->Regulador->find('first', array(
 						'conditions' => array('Regulador.id' => $regid)
 					));
+
+		$alternativos = array();
+		
+		$altids = str_replace('alts', '', $altids);
+		$altid = explode('-', $altids);
+		
+		$this->Alternativo->recursive = -1;
+		foreach($altid as $id) {
+			if($id >= 1) {
+				$hold = $this->Alternativo->find('first', array('conditions' => array('Alternativo.id' => $id) ) );
+				array_push($alternativos,$hold);
+			}
+		}
 					
 		$this->set('title_for_layout','Proceso MIG - '.$maquina['Maquina']['name']);
 		
@@ -1036,7 +1081,7 @@ function selector2($step = null, $mat = null, $matid = null, $cal = null, $calid
 		}
 		*/
 		
-		$this->set(compact('material', 'calibre', 'gas', 'maquina', 'microalambre', 'antorcha', 'aporte', 'regulador', 'protecciones', 'ciudades'));
+		$this->set(compact('material', 'calibre', 'gas', 'maquina', 'microalambre', 'antorcha', 'aporte', 'regulador', 'alternativos', 'protecciones', 'ciudades'));
 	
 	} else {
 		$this->Session->setFlash(__('La selección que buscas no existe. Busca de nuevo.', true), 'flash_failure');

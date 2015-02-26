@@ -34,7 +34,8 @@ echo $this->Form->input('id');
 
 	echo '<div class="mig_color">';
 	echo $this->Form->input('pmig', array('type' => 'checkbox', 'label' => '¿Pertenece al proceso MIG?</label?')); 
-
+		echo $this->Form->input('MigRegulador');
+		echo $this->Form->input('MigProteccione');
 	echo '</div>';
 	
 	

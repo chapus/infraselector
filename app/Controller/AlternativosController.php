@@ -114,7 +114,9 @@ class AlternativosController extends AppController {
 			}
 			$tigProtecciones = $this->Alternativo->TigProteccione->find('list', array('conditions' => array('TigProteccione.ptig' => 1)) );
 			$tigReguladors = $this->Alternativo->TigRegulador->find('list', array('conditions' => array('TigRegulador.ptig' => 1)) );
-			$this->set(compact('tigReguladors', 'tigProtecciones'));
+			$migProtecciones = $this->Alternativo->MigProteccione->find('list', array('conditions' => array('MigProteccione.pmig' => 1)) );
+			$migReguladors = $this->Alternativo->MigRegulador->find('list', array('conditions' => array('MigRegulador.pmig' => 1)) );
+			$this->set(compact('tigReguladors', 'tigProtecciones', 'migProtecciones', 'migReguladors'));
 			
 		}
 	}
