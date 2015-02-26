@@ -32,7 +32,7 @@ echo $this->Form->input('id');
 	echo '<div class="mig_color">';
 	echo $this->Form->input('pmig', array('type' => 'checkbox', 'label' => '¿Pertenece al proceso MIG?</label?'));
 	
-	echo $this->Form->input('MigMaquina', array('label' => '¿Qué antorchas se relacionan con el Alimentador de Micro Alambre?')).$this->Html->tag('div', 'Para seleccionar más de una, dejar presionando CTRL y dar click a cada una de las antorchas que se necesiten. Para quitar de la selección a una o más presionar CTRL y dar click a la antorcha.','inputmsg');
+	echo $this->Form->input('MigAntorcha', array('label' => '¿Qué antorchas se relacionan con el Alimentador de Micro Alambre?')).$this->Html->tag('div', 'Para seleccionar más de una, dejar presionando CTRL y dar click a cada una de las antorchas que se necesiten. Para quitar de la selección a una o más presionar CTRL y dar click a la antorcha.','inputmsg');
 	
 	echo $this->Form->input('MigMaquina', array('label' => '¿Qué máquina se relacionan con el Alimentador de Micro Alambre?')).$this->Html->tag('div', 'Para seleccionar más de una, dejar presionando CTRL y dar click a cada una de las máquinas que se necesiten. Para quitar de la selección a una o más presionar CTRL y dar click a la máquina de soldar.','inputmsg');
 	
