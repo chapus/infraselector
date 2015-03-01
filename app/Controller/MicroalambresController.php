@@ -49,7 +49,7 @@ class MicroalambresController extends AppController {
 			if (!empty($this->data)) {
 				
 					$date = date("Y-m-d H:i:s");
-					$this->data['Microalambre']['created'] = $date;
+					$this->request->data['Microalambre']['created'] = $date;
 					
 					$smallimage = $this->uploadFiles('img/alimentadores/thumb', $this->data['Microalambre']['smallfile']);
 					$image = $this->uploadFiles('img/alimentadores', $this->data['Microalambre']['bigfile']);

@@ -166,7 +166,7 @@ foreach($data as $dat) {
           
           <td><?php 
 		  echo $this->Html->link('Ver', array('controller' => '', 'action' => 'calibresdelamina', $dat['Calibre']['id']))."<br />"; 
-		  echo $this->Html->link('Editar', array('controller' => 'calibres', 'action' => 'edit', $dat['Calibre']['id'].'/'.str_replace(array('/', ':'), array('_', '-'), $this->params['url']['url']) ))."<br />"; 
+		  echo $this->Html->link('Editar', array('controller' => 'calibres', 'action' => 'edit', $dat['Calibre']['id'] ))."<br />"; 
 		  ?></td>
         </tr>
 <?php

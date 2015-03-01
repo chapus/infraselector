@@ -49,7 +49,7 @@ class GasesController extends AppController {
 			if (!empty($this->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Gase']['created'] = $date;
+				$this->request->data['Gase']['created'] = $date;
 					
 				$smallimage = $this->uploadFiles('img/gases/thumb', $this->data['Gase']['smallfile']);
 				$image = $this->uploadFiles('img/gases', $this->data['Gase']['bigfile']);

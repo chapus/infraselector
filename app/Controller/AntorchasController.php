@@ -49,7 +49,7 @@ class AntorchasController extends AppController {
 			if (!empty($this->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Antorcha']['created'] = $date;
+				$this->request->data['Antorcha']['created'] = $date;
 					
 				$smallimage = $this->uploadFiles('img/antorchas/thumb', $this->data['Antorcha']['smallfile']);
 				$image = $this->uploadFiles('img/antorchas', $this->data['Antorcha']['bigfile']);
