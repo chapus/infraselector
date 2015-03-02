@@ -78,7 +78,7 @@ foreach($data as $dat) {
           
           <td><?php 
 		  echo $this->Html->link('Ver', array('controller' => 'calidadgases', 'action' => 'viewby', $dat['Calidadgase']['id']))."<br />"; 
-		  echo $this->Html->link('Editar', array('controller' => 'calidadgases', 'action' => 'edit', $dat['Calidadgase']['id'].'/'.str_replace(array('/', ':'), array('_', '-'), $this->params['url']['url']) ))."<br />"; 
+		  echo $this->Html->link('Editar', array('controller' => 'calidadgases', 'action' => 'edit', $dat['Calidadgase']['id']))."<br />"; 
 		  ?></td>
         </tr>
 <?php

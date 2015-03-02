@@ -440,6 +440,7 @@ class MigsController extends AppController {
 				
 				$this->Gase->recursive = -1;
 				$this->MigCalibreCalidadgase->recursive = -1;
+				$c_calidad['Calidadgase'] = array('name' => '');
 				
 				$c_calibre = $this->MigCalibreCalidadgase->find('all', array('conditions' => array('MigCalibreCalidadgase.calibre_id' => $_POST['id']) ) );
 				

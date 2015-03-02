@@ -19,6 +19,12 @@
     <li><?= $this->Html->link('Agregar nuevo', array('controller' => 'calibres', 'action' => 'add')); ?></li>
     <li><?= $this->Html->link('Ver rangos de Amperaje', array('controller' => 'amperajes', 'action' => 'view')); ?></li>
     </ul>
+
+    <h3><?= $this->Html->image('infrasmall.png'); ?> Condicion de Calidad (Tig)</h3>
+    <ul class="bblist">
+    <li><?= $this->Html->link('Ver Todos', array('controller' => 'ccalidades', 'action' => 'viewall')); ?></li>
+    <li><?= $this->Html->link('Agregar nuevo', array('controller' => 'ccalidades', 'action' => 'add')); ?></li>
+    </ul>
     
     <h3><?= $this->Html->image('infrasmall.png'); ?> Gas de Protección</h3>
     <ul class="bblist">
@@ -66,6 +72,12 @@
     <li><?= $this->Html->link('Ver Todas', array('controller' => 'antorchas', 'action' => 'viewall')); ?></li>
     <li><?= $this->Html->link('Agregar nueva', array('controller' => 'antorchas', 'action' => 'add')); ?></li>
     <li><?= $this->Html->link('Ver Accesorios de ensamblaje', array('controller' => 'accesorios', 'action' => 'view')); ?></li>
+    </ul>
+
+    <h3><?= $this->Html->image('infrasmall.png'); ?> Tungsteno</h3>
+    <ul class="bblist">
+    <li><?= $this->Html->link('Ver Todos', array('controller' => 'tungstenos', 'action' => 'viewall')); ?></li>
+    <li><?= $this->Html->link('Agregar nuevo', array('controller' => 'tungstenos', 'action' => 'add')); ?></li>
     </ul>
     
     <h3><?= $this->Html->image('infrasmall.png'); ?> Material de aporte</h3>

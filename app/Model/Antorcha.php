@@ -149,6 +149,21 @@ class Antorcha extends AppModel {
 			'deleteQuery' => '',
 			'insertQuery' => ''
 		),
+		'TigTungsteno' => array(
+			'className' => 'Tungsteno',
+			'joinTable' => 'tig_antorcha_tungstenos',
+			'foreignKey' => 'antorcha_id',
+			'associationForeignKey' => 'tungsteno_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'TigAporte' => array(
 			'className' => 'Aporte',
 			'joinTable' => 'tig_antorcha_aportes',

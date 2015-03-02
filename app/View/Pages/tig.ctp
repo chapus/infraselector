@@ -69,6 +69,31 @@
 <div class="space"></div>
 
 
+<div id="stp21" class="smallstep">
+    <div class="left">
+        <div class="paso">Selección</div><div class="number red"><span class="text">2.1</span></div>
+        <div class="loader" style="display:none;"></div>
+    </div>
+    
+<div class="center">
+    <div class="title">Condición de Calidad</div>
+    <div class="select"><?= $this->element('steps/tig31-ccalidad'); ?></div>
+    <div class="ovinfo"><div class="info"><div class="preinfo">Elija la condición de calidad que necesita deacuerdo a las siguientes opciones.</div></div></div>
+</div>
+
+    <div class="right">
+        <div class="title"></div>
+        <div class="image"></div>
+        <div class="loader" style="display:none;"></div>
+    </div>
+    <div class="faright">
+        <div class="link"><?= $this->Html->link($this->Html->image('icons/link.png'), '#', array('escape' => false, 'target' => '_blank'), null); ?></div>
+    </div>
+</div>
+
+<div class="space"></div>
+
+
 
 <div id="stp3" class="step">
     <div class="left">
@@ -143,6 +168,30 @@
 
     <div class="right">
     	<div class="title"></div>
+        <div class="image"></div>
+        <div class="loader" style="display:none;"></div>
+    </div>
+</div>
+
+<div class="space"></div>
+
+
+
+
+<div id="stp61" class="step">
+    <div class="left">
+        <div class="paso">Selección</div><div class="number red"><span class="text">5.1</span></div>
+        <div class="loader" style="display:none;"></div>
+    </div>
+    
+<div class="center">
+    <div class="title">Tungsteno</div>
+    <div class="select"><?= $this->element('steps/tig61-tungstenos'); ?></div>
+    <div class="info"><div class="preinfo">Elija el tungsteno para la antorcha seleccionada. El sistema puede darle una sola opción por default de acuerdo a sus necesidades.</div></div>
+</div>
+
+    <div class="right">
+        <div class="title"></div>
         <div class="image"></div>
         <div class="loader" style="display:none;"></div>
     </div>
@@ -413,6 +462,7 @@ $("#calibres").change(function() {
 $.fn.fCalibres = function() {   
     if($('#calibres option:selected').val() != "") {
        $('#stp2 .left .loader').show();
+       /*
             $.ajax({
                 url: path+'tigs/selectorStep3',
                 data: {'id' : $('#calibres option:selected').val(),
@@ -434,6 +484,33 @@ $.fn.fCalibres = function() {
                                 }
                             });
                             $("#gases").focus();
+                        }
+                        
+                    });
+                }
+            }); 
+        */
+            $.ajax({
+                url: path+'tigs/selectorStep31',
+                data: {'id' : $('#calibres option:selected').val(),
+                'matid' : $('#materials option:selected').val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stp2 .left .loader').fadeOut(200, function () {
+                        $('#stp2 .right .title').html($('#calibres option:selected').text());
+                        $("#ccalidades").removeOption(/./);
+                        $.fn.fClear(3, 9);
+                        for(i = 0; i < data.length; i++) {
+                            $.each(data[i], function() {
+                                if(data.length != 1) {
+                                    $("#ccalidades").addOption(this.id, this.name, false);
+                                } else {
+                                    $("#ccalidades").addOption(this.id, this.name);
+                                    $("#ccalidades").fCcalidades();
+                                }
+                            });
+                            $("#ccalidades").focus();
                         }
                         
                     });
@@ -504,6 +581,78 @@ $.fn.fCalibres = function() {
             
     } else { $.fn.fClearInner( $('#stp2') ); $.fn.fClear(3, 9); $('#stp2 .center .info').html('Elija el calibre o espesor aproximado del material base que soldará de acuerdo a las siguientes opciones.'); }
 }
+
+
+
+$("#ccalidades").change(function() {
+    flag = 0;
+    $("#ccalidades").fCcalidades();
+});
+$.fn.fCcalidades = function() {   
+    if($('#ccalidades option:selected').val() != "") {
+       $('#stp21 .left .loader').show();
+       
+            $.ajax({
+                url: path+'tigs/selectorStep3',
+                data: {'id' : $('#calibres option:selected').val(),
+                'matid' : $('#materials option:selected').val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stp2 .left .loader').fadeOut(200, function () {
+                        $('#stp2 .right .title').html($('#calibres option:selected').text());
+                        $("#gases").removeOption(/./);
+                        $.fn.fClear(3, 9);
+                        for(i = 0; i < data.length; i++) {
+                            $.each(data[i], function() {
+                                if(data.length != 1) {
+                                    $("#gases").addOption(this.id, this.name+' ('+this.ccalidad.Calidadgase.name+')', false);
+                                } else {
+                                    $("#gases").addOption(this.id, this.name+' ('+this.ccalidad.Calidadgase.name+')');
+                                    $("#gases").fGases();
+                                }
+                            });
+                            $("#gases").focus();
+                        }
+                        
+                    });
+                }
+            }); 
+        
+            
+            $('#stp21 .right .image').html('');
+            $('#stp21 .right .loader').show();
+            $.ajax({
+                url: path+'tigs/interStep31',
+                data: {'id' : $('#ccalidades option:selected').val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stp21 .right .loader').fadeOut(200, function () {
+                        $.each(data, function() {
+                            $('#stp21 .center .info').html(this.description);
+                            if(this.smallimage != null) {
+                                $('#stp21 .right .image').html('<img src="'+this.smallimage+'" />');
+                            } else {
+                                $('#stp21 .right .image').html('<img src="'+path+'img/ccalidades/default.png" />');
+                            }
+                            
+                            if(this.infra_link != "") {
+                                $('#stp21 .faright .link a').attr('href', this.infra_link);
+                                $('#stp21 .faright .link a').fadeIn();
+                            } else {
+                                $('#stp21 .faright .link a').hide();
+                            }
+                            
+                            });
+                        
+                    });
+                }
+            });
+            
+    } else { $.fn.fClearInner( $('#stp2') ); $.fn.fClear(3, 9); $('#stp2 .center .info').html('Elija el calibre o espesor aproximado del material base que soldará de acuerdo a las siguientes opciones.'); }
+}
+
 
 
 $("#gases").change(function() {
@@ -801,7 +950,70 @@ $.fn.fAntorchas = function() {
             }); 
     } else { $.fn.fClearInner( $('#stp5') ); $.fn.fClear(6, 9); $('#stp5 .center .info').html('Elija el tipo de antorcha que mejor se adapte a la maquina para soldar seleccionada y a sus procesos de soldadura. El sistema puede darle una sola opción por default de acuerdo a sus necesidades.'); }
 }
-   
+
+
+$("#tungstenos").change(function() {
+    flag = 0;
+    $("#tungstenos").fAntorchas();
+});   
+$.fn.fTungstenos = function() {
+    if($('#tungstenos option:selected').val() != "") {
+       $('#stp5 .left .loader').show();
+            $.ajax({
+                url: path+'tigs/selectorStep61',
+                data: {'id' : $('#tungstenos option:selected').val(),
+                'maqid' : $('#maquinas option:selected').val(),
+                'gasid' : $('#gases option:selected').val(),
+                'calibreid' : $('#calibres option:selected').val(),
+                'matid' : $('#materials option:selected').val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stp5 .left .loader').fadeOut(200, function () {
+                        $.fn.fClear(6, 9);
+                        $('#stp5 .right .title').html($('#tungstenos option:selected').text());
+                        $("#aportes").removeOption(/./);
+                        for(i = 0; i < data.length; i++) {
+                            $.each(data[i], function() {
+                                if(data.length != 1) {
+                                    $("#aportes").addOption(this.id, this.name, false);
+                                } else {
+                                    $("#aportes").addOption(this.id, this.name);
+                                    $("#aportes").fAportes();
+                                }
+                            });
+                            $("#aportes").focus();
+                        }
+                        
+                    });
+                }
+            }); 
+            
+            
+            $('#stp5 .right .image').html('');
+            $('#stp5 .right .loader').show();
+            $.ajax({
+                url: path+'tigs/interStep61',
+                data: {'id' : $('#tungstenos option:selected').val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stp5 .right .loader').fadeOut(200, function () {
+                        $.each(data, function() {
+                            $('#stp5 .center .info').html(this.description);
+                            if(this.smallimage != null) {
+                                $('#stp5 .right .image').html('<img src="'+this.smallimage+'" />');
+                            } else {
+                                $('#stp5 .right .image').html('<img src="'+path+'img/tungstenos/default.png" />');
+                            }
+                            });
+                        
+                    });
+                }
+            }); 
+    } else { $.fn.fClearInner( $('#stp5') ); $.fn.fClear(6, 9); $('#stp5 .center .info').html('Elija el tipo de antorcha que mejor se adapte a la maquina para soldar seleccionada y a sus procesos de soldadura. El sistema puede darle una sola opción por default de acuerdo a sus necesidades.'); }
+}
+
    
 $("#aportes").change(function() {
     flag = 0;
