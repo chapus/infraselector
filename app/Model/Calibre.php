@@ -46,6 +46,19 @@ class Calibre extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'TigCalibreCcalidade' => array(
+			'className' => 'TigCalibreCcalidade',
+			'foreignKey' => 'calibre_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'TigCalibreGase' => array(
 			'className' => 'TigCalibreGase',
 			'foreignKey' => 'calibre_id',
@@ -140,6 +153,21 @@ class Calibre extends AppModel {
 	);
 	
 	var $hasAndBelongsToMany = array(
+		'TigCcalidade' => array(
+			'className' => 'Ccalidade',
+			'joinTable' => 'tig_ccalidade_calibres',
+			'foreignKey' => 'calibre_id',
+			'associationForeignKey' => 'ccalidade_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		),
 		'MigGase' => array(
 			'className' => 'Gase',
 			'joinTable' => 'mig_calibre_gases',

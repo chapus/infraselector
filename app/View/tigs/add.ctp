@@ -22,10 +22,12 @@ $('#TigAddForm').submit(function(e) {
 		url: path+'tigs/saveSelection',
 		data: {'st1' : $('#TigMaterials option:selected').val(),
 		'st2' : $('#TigCalibres option:selected').val(),
+		'st31' : $('#TigCcalidades option:selected').val(),
 		'st3' : $('#TigGases option:selected').val(),
 		'st4' : $('#TigMaquinas option:selected').val(),
 		'st5' : $('#TigAntorchas option:selected').val(),
 		'st6' : $('#TigAportes option:selected').val(),
+		'st61' : $('#TigTungstenos option:selected').val(),
 		'st7' : $('#TigReguladores option:selected').val(),
 		'st8' : $('#TigAlternativos option:selected').val()
 		},
@@ -84,6 +86,35 @@ $.fn.fCalibres = function() {
 			$.ajax({
 				url: path+'tigs/s2_info',
 				data: {'id' : $('#TigCalibres option:selected').val()},
+				type: 'POST',
+				dataType: 'json',
+				success: function (data) {
+					$("#TigCcalidades").removeOption(/./);
+					$("#TigCcalidades").attr('disabled', false);
+					for(i = 0; i < data.length; i++) {
+						$.each(data[i].TigCcalidade, function() {
+							if(data[i].TigCcalidade.length != 1) {
+								$("#TigCcalidades").addOption(this.id, this.name, false);
+							} else {
+								$("#TigCcalidades").addOption(this.id, this.name);
+								$("#TigCcalidades").fCcalidades();
+							}
+						});
+						
+					}
+				}
+			});		
+}
+
+
+$("#TigCcalidades").change(function() {
+	$("#TigCcalidades").fCcalidades();
+});
+$.fn.fCcalidades = function() {   
+	   
+			$.ajax({
+				url: path+'tigs/s31_info',
+				data: {'id' : $('#TigCcalidades option:selected').val()},
 				type: 'POST',
 				dataType: 'json',
 				success: function (data) {
@@ -176,6 +207,36 @@ $.fn.fAntorchas = function() {
 			$.ajax({
 				url: path+'tigs/s6_info',
 				data: {'id' : $('#TigAntorchas option:selected').val()},
+				type: 'POST',
+				dataType: 'json',
+				success: function (data) {
+						$("#TigTungstenos").removeOption(/./);
+						$("#TigTungstenos").attr('disabled', false);
+						for(i = 0; i < data.length; i++) {
+							$.each(data[i].TigTungsteno, function() {
+								if(data[i].TigTungsteno.length != 1) {
+									$("#TigTungstenos").addOption(this.id, this.name, false);
+								} else {
+									$("#TigTungstenos").addOption(this.id, this.name);
+									$("#TigTungstenos").fTungstenos();
+								}
+							});
+							
+						}
+				}
+			});		
+}
+
+
+
+$("#TigTungstenos").change(function() {
+	$("#TigTungstenos").fTungstenos();
+});   
+$.fn.fTungstenos = function() {
+	   
+			$.ajax({
+				url: path+'tigs/s61_info',
+				data: {'id' : $('#TigTungstenos option:selected').val()},
 				type: 'POST',
 				dataType: 'json',
 				success: function (data) {
@@ -274,9 +335,11 @@ echo $this->Form->input('materials', array('empty' => true) );
 echo $this->Html->tag('div', '', array('class' => 's1load') );
 
 echo $this->Form->input('calibres', array('type' => 'select', 'empty' => true, 'disabled' => true) );
+echo $this->Form->input('ccalidades', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('gases', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('maquinas', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('antorchas', array('type' => 'select', 'empty' => true, 'disabled' => true) );
+echo $this->Form->input('tungstenos', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('aportes', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('reguladores', array('type' => 'select', 'empty' => true, 'disabled' => true) );
 echo $this->Form->input('alternativos', array('type' => 'select', 'empty' => true, 'disabled' => true) );
