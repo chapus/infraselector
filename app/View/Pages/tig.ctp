@@ -599,8 +599,8 @@ $.fn.fCcalidades = function() {
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
-                    $('#stp2 .left .loader').fadeOut(200, function () {
-                        $('#stp2 .right .title').html($('#calibres option:selected').text());
+                    $('#stp21 .left .loader').fadeOut(200, function () {
+                        $('#stp21 .right .title').html($('#ccalidades option:selected').text());
                         $("#gases").removeOption(/./);
                         $.fn.fClear(3, 9);
                         for(i = 0; i < data.length; i++) {
@@ -731,7 +731,9 @@ $.fn.fGases = function() {
                     type: 'POST',
                     dataType: 'json',
                     success: function (data) {
-                        $('div#stp3 div.right').append('<div id="ccalidad"><b>Condición de Calidad</b>:<br />'+data['Calidadgase']['name']+'</div>');
+                        if(data.hasOwnProperty('Calidadgase')) {
+                            $('div#stp3 div.right').append('<div id="ccalidad"><b>Condición de Calidad</b>:<br />'+data['Calidadgase']['name']+'</div>');
+                        }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log("AJAX - error() "+ textStatus);
