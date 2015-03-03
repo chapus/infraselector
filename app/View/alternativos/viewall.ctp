@@ -57,7 +57,7 @@ $limit = 200;
 	echo $this->Form->input('ptig', array('type' => 'checkbox', 'hiddenField' => false, 'label' => 'Proceso TIG', 'checked' => $ptig));
 	echo $this->Form->input('psmaw', array('type' => 'checkbox', 'hiddenField' => false, 'label' => 'Proceso SMAW', 'checked' => $psmaw));
 	
-	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", 'submit');
+	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", array('id' => 'submit') );
 	echo $this->Form->end();
 	
 ?>

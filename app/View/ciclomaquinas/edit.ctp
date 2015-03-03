@@ -12,9 +12,9 @@
 
 		echo $this->Form->input('id');
 		
-		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Título que aparecerá en el selector','inputmsg');
+		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Título que aparecerá en el selector', array('class' => 'inputmsg') );
 
-		echo $this->Form->input('description', array('label' => 'Descripción')).$this->Html->tag('div', 'La descripción puede ser de lo más extensa como se requiera.','inputmsg2');
+		echo $this->Form->input('description', array('label' => 'Descripción')).$this->Html->tag('div', 'La descripción puede ser de lo más extensa como se requiera.', array('class' => 'inputmsg2') );
 
 		echo $this->Form->input('creator_id', array('type' => 'hidden', 'value' => $session_info['iduser']));
 	

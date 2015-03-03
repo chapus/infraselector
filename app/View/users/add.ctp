@@ -9,11 +9,11 @@
 
 <?php echo $this->Form->create('User');
 
-		echo $this->Form->input('name', array('label' => 'Nombre de Usuario')).$this->Html->tag('div', 'El nombre de Usuario tiene que ser mínimo de 6 caracteres, no se aceptan mayúsculas, ni caracteres especiales, ni espacios en blanco.','inputmsg');
-		echo $this->Form->input('email', array('label' => 'Correo electrónico')).$this->Html->tag('div', 'Correo electrónico de Infra.','inputmsg');	
+		echo $this->Form->input('name', array('label' => 'Nombre de Usuario')).$this->Html->tag('div', 'El nombre de Usuario tiene que ser mínimo de 6 caracteres, no se aceptan mayúsculas, ni caracteres especiales, ni espacios en blanco.', array('class' => 'inputmsg') );
+		echo $this->Form->input('email', array('label' => 'Correo electrónico')).$this->Html->tag('div', 'Correo electrónico de Infra.', array('class' => 'inputmsg') );	
 		
-		echo $this->Form->input('password', array('label' => 'Contraseña')).$this->Html->tag('div', 'La contraseña debe ser mínimo de 6 caracteres, sin espacios.','inputmsg');
-		echo $this->Form->input('password2', array('type' => 'password', 'label' => 'Repítela', 'div' => 'input password')).$this->Html->tag('div', 'Repite la contraseña','inputmsg');
+		echo $this->Form->input('password', array('label' => 'Contraseña')).$this->Html->tag('div', 'La contraseña debe ser mínimo de 6 caracteres, sin espacios.', array('class' => 'inputmsg') );
+		echo $this->Form->input('password2', array('type' => 'password', 'label' => 'Repítela', 'div' => 'input password')).$this->Html->tag('div', 'Repite la contraseña', array('class' => 'inputmsg') );
 		
 		echo $this->Form->input('group_id', array('label' => 'Grupo'));
 		echo $this->Form->input('level_id', array('label' => 'Nivel'));

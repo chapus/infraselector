@@ -43,7 +43,7 @@ $limit = 200;
 		));
 	echo $this->Form->input('name', array('label' => 'Por Nombre de Sección'));
 	
-	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", 'submit');
+	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", array('id' => 'submit') );
 	echo $this->Form->end();
 	
 ?>

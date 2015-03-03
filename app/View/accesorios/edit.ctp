@@ -12,15 +12,15 @@
 		
 		echo $this->Form->input('id');
 		
-		echo $this->Form->input('ceramica', array('label' => 'Ceramica')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('ceramica', array('label' => 'Ceramica')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('portamordaza', array('label' => 'Porta Mordaza')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('portamordaza', array('label' => 'Porta Mordaza')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('mordaza', array('label' => 'Mordaza')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('mordaza', array('label' => 'Mordaza')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('tapa', array('label' => 'Tapa')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('tapa', array('label' => 'Tapa')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('tungsteno', array('label' => 'Tungsteno')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('tungsteno', array('label' => 'Tungsteno')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen de la Antorcha. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 		
 		echo '<div class="tig_color">';
 			echo $this->Form->input('TigCalibre', array('size' => 50) );

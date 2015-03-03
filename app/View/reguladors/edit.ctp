@@ -12,24 +12,24 @@
 <?php echo $this->Form->create('Regulador', array('type' => 'file'));
 echo $this->Form->input('id');
 
-		echo $this->Form->input('codigo', array('label' => 'Código')).$this->Html->tag('div', 'Código del Producto','inputmsg');
+		echo $this->Form->input('codigo', array('label' => 'Código')).$this->Html->tag('div', 'Código del Producto', array('class' => 'inputmsg') );
 
-		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Nombre completo del Regulador de Presión','inputmsg');
+		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Nombre completo del Regulador de Presión', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('short', array('label' => 'Nombre Corto')).$this->Html->tag('div', 'Nombre popular o corto del Regulador de Presión. Nota: este nombre sale debajo del nombre completo en letras pequeñas.','inputmsg');
+		echo $this->Form->input('short', array('label' => 'Nombre Corto')).$this->Html->tag('div', 'Nombre popular o corto del Regulador de Presión. Nota: este nombre sale debajo del nombre completo en letras pequeñas.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('smallfile', array('type' => 'file', 'label' => 'Imagen chica')).$this->Html->tag('div', 'La imagen no debe pesar más de 1 mega, y el tamaño ideal tiene que ser de 200x200. No es necesario una imagen más grande.','inputmsg');
+		echo $this->Form->input('smallfile', array('type' => 'file', 'label' => 'Imagen chica')).$this->Html->tag('div', 'La imagen no debe pesar más de 1 mega, y el tamaño ideal tiene que ser de 200x200. No es necesario una imagen más grande.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('bigfile', array('type' => 'file', 'label' => 'Imagen grande')).$this->Html->tag('div', 'La imagen no debe pesar más de 2 Megas, y el tamaño ideal tiene que ser proporcional. El máximo es de 750x750 pixeles.','inputmsg');
+		echo $this->Form->input('bigfile', array('type' => 'file', 'label' => 'Imagen grande')).$this->Html->tag('div', 'La imagen no debe pesar más de 2 Megas, y el tamaño ideal tiene que ser proporcional. El máximo es de 750x750 pixeles.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('description', array('label' => 'Descripción')).$this->Html->tag('div', 'La descripción puede ser de lo más extensa como se requiera. Utilice la barra que se encuentra arriba para darle formato en HTML necesario a la descripción.','inputmsg2');
+		echo $this->Form->input('description', array('label' => 'Descripción')).$this->Html->tag('div', 'La descripción puede ser de lo más extensa como se requiera. Utilice la barra que se encuentra arriba para darle formato en HTML necesario a la descripción.', array('class' => 'inputmsg2') );
 		
-		echo $this->Form->input('infra_link', array('label' => 'Link Interno')).$this->Html->tag('div', 'El Link interno es opcional, si se tiene información adicional del producto dentro del portal de INFRA se puede poner el link aquí. Este aparecería en el Regulador de Presión como link para mayor información.','inputmsg');
+		echo $this->Form->input('infra_link', array('label' => 'Link Interno')).$this->Html->tag('div', 'El Link interno es opcional, si se tiene información adicional del producto dentro del portal de INFRA se puede poner el link aquí. Este aparecería en el Regulador de Presión como link para mayor información.', array('class' => 'inputmsg') );
 		
 		
 		echo $this->Form->input('Aporte');
 		
-		echo $this->Form->input('Proteccione', array('label' => '¿Qué artículos de protección se relacionan con el Regulador de Presión?')).$this->Html->tag('div', 'Para seleccionar más de un artículo, dejar presionando CTRL y dar click a cada uno de los artículos de protección que se necesiten. Para quitar de la selección a uno o más presionar CTRL y dar click al artículo de protección.','inputmsg');
+		echo $this->Form->input('Proteccione', array('label' => '¿Qué artículos de protección se relacionan con el Regulador de Presión?')).$this->Html->tag('div', 'Para seleccionar más de un artículo, dejar presionando CTRL y dar click a cada uno de los artículos de protección que se necesiten. Para quitar de la selección a uno o más presionar CTRL y dar click al artículo de protección.', array('class' => 'inputmsg') );
 		
 		echo $this->Form->input('creator_id', array('type' => 'hidden', 'value' => $session_info['iduser']));
 

@@ -44,7 +44,7 @@ $limit = 200;
 	echo $this->Form->input('name', array('label' => 'Por Nombre Completo'));
 	echo $this->Form->input('description', array('type' => 'text', 'label' => 'Por Descripción'));
 	
-	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", 'submit');
+	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", array('id' => 'submit') );
 	echo $this->Form->end();
 	
 ?>

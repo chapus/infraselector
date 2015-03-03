@@ -9,7 +9,7 @@
 
 <?php echo $this->Form->create('Seccion');
 		
-		echo $this->Form->input('name', array('label' => 'Nombre de la Sección')).$this->Html->tag('div', 'Nombre para la Sección','inputmsg');
+		echo $this->Form->input('name', array('label' => 'Nombre de la Sección')).$this->Html->tag('div', 'Nombre para la Sección', array('class' => 'inputmsg') );
 		
 		echo $this->Form->input('creator_id', array('type' => 'hidden', 'value' => $session_info['iduser']));
 	

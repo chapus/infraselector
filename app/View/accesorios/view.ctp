@@ -47,7 +47,7 @@ $limit = 200;
 	echo $this->Form->input('tapa', array('label' => 'Tapa'));
 	echo $this->Form->input('tungsteno', array('label' => 'Tungsteno'));
 	
-	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", 'submit');
+	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", array('id' => 'submit') );
 	echo $this->Form->end();
 	
 ?>

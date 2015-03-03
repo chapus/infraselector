@@ -15,7 +15,7 @@ echo $this->Form->create('Marketing', array('type' => 'file'));
 
 		echo $this->Form->input('name', array('label' => 'Subject')).$this->Html->tag('div', 'Título del mensaje que aparecerá en los correos');
 		
-		echo $this->Form->input('body', array('label' => 'Mensaje')).$this->Html->tag('div', 'Mensaje que aparecerá dentro del correo.','inputmsg');
+		echo $this->Form->input('body', array('label' => 'Mensaje')).$this->Html->tag('div', 'Mensaje que aparecerá dentro del correo.', array('class' => 'inputmsg') );
 		
 
 	

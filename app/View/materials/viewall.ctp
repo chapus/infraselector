@@ -4,23 +4,20 @@
 	//debug($this->data);
 ?>
 <script type="text/javascript">
-
 $(function () {
-        $('.item').each(function (index) {
-			$(this).find("tr").mouseover(function() {
-				$(this).css("backgroundColor", "#F1C49A");
-			}).mouseout(function() {
-				if($(this).attr('class') == "trow") {
-				$(this).css("backgroundColor", "#F0F0F0");
-				$(this).css("fontWeight", "normal");
-				} else { $(this).css("backgroundColor", "#FFF"); }
-			}).click(function() {
-				$(this).css("backgroundColor", "#8DBEF3");
-			});
-			
+    $('.item').each(function (index) {
+		$(this).find("tr").mouseover(function() {
+			$(this).css("backgroundColor", "#F1C49A");
+		}).mouseout(function() {
+			if($(this).attr('class') == "trow") {
+			$(this).css("backgroundColor", "#F0F0F0");
+			$(this).css("fontWeight", "normal");
+			} else { $(this).css("backgroundColor", "#FFF"); }
+		}).click(function() {
+			$(this).css("backgroundColor", "#8DBEF3");
 		});
-
 		
+	});	
 });
 </script>
 <div class="box-content" style="display:inline-block;">
@@ -31,8 +28,8 @@ $(function () {
 <div class="search">
 <span class="stitle">Buscador
 <?php
-if(isset($this->data)) {
-	echo $this->Paginator->counter(array('format' => __(' - Se encontraron %count% resultados', true)));
+if(isset($this->request->data)) {
+	echo $this->Paginator->counter(array('format' => __(' - Se encontraron %count% resultados')));
 }
 ?>
 </span>
@@ -60,7 +57,7 @@ $limit = 200;
 	echo $this->Form->input('psmaw', array('type' => 'checkbox', 'hiddenField' => false, 'label' => 'Proceso SMAW', 'checked' => $psmaw));
 	echo $this->Form->input('ppac', array('type' => 'checkbox', 'hiddenField' => false, 'label' => 'Proceso PAC', 'checked' => $ppac));
 	
-	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", 'submit');
+	echo $this->Html->tag('div', "<button class='rounded' id='submit'><span>Buscar</span></button>", array('id' => 'submit') );
 	echo $this->Form->end();
 	
 ?>

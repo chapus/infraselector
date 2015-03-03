@@ -12,7 +12,7 @@
 		
 		echo $this->Form->input('id');
 		
-		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen del Calibre. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen del Calibre. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 		
 		echo '<div class="tig_color">';
 			echo $this->Form->input('TigCalibre', array('size' => 50) );

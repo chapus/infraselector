@@ -12,18 +12,18 @@
 echo $this->Form->create('Ciudade');
 
 
-		echo $this->Form->input('name', array('label' => 'Ciudad')).$this->Html->tag('div', 'Nombre de la Ciudad, no se pueden repetir con los existentes.','inputmsg');
+		echo $this->Form->input('name', array('label' => 'Ciudad')).$this->Html->tag('div', 'Nombre de la Ciudad, no se pueden repetir con los existentes.', array('class' => 'inputmsg') );
 		
-		echo $this->Form->input('area', array('label' => 'Ciudad')).$this->Html->tag('div', 'Nombre de la Ciudad, no se pueden repetir con los existentes.','inputmsg');
-		echo $this->Form->input('gerente', array('label' => 'Correo del Gerente')).$this->Html->tag('div', 'Correo del Gerente.','inputmsg');
-		echo $this->Form->input('tecnico', array('label' => 'Correo del Técnico')).$this->Html->tag('div', 'Correo del Técnico.','inputmsg');
-		echo $this->Form->input('sucursal', array('label' => 'Correo de la Sucursal')).$this->Html->tag('div', 'Correo de la Sucursal.','inputmsg');
-		echo $this->Form->input('vendedor1', array('label' => 'Correo del vendedor 1')).$this->Html->tag('div', 'Correo del vendedor 1. (opcional)','inputmsg');
-		echo $this->Form->input('vendedor2', array('label' => 'Correo del vendedor 2')).$this->Html->tag('div', 'Correo del vendedor 2. (opcional)','inputmsg');
-		echo $this->Form->input('vendedor3', array('label' => 'Correo del vendedor 3')).$this->Html->tag('div', 'Correo del vendedor 3. (opcional)','inputmsg');
-		echo $this->Form->input('vendedor4', array('label' => 'Correo del vendedor 4')).$this->Html->tag('div', 'Correo del vendedor 4. (opcional)','inputmsg');
-		echo $this->Form->input('vendedor5', array('label' => 'Correo del vendedor 5')).$this->Html->tag('div', 'Correo del vendedor 5. (opcional)','inputmsg');
-		echo $this->Form->input('vendedor6', array('label' => 'Correo del vendedor 6')).$this->Html->tag('div', 'Correo del vendedor 6. (opcional)','inputmsg');
+		echo $this->Form->input('area', array('label' => 'Ciudad')).$this->Html->tag('div', 'Nombre de la Ciudad, no se pueden repetir con los existentes.', array('class' => 'inputmsg') );
+		echo $this->Form->input('gerente', array('label' => 'Correo del Gerente')).$this->Html->tag('div', 'Correo del Gerente.', array('class' => 'inputmsg') );
+		echo $this->Form->input('tecnico', array('label' => 'Correo del Técnico')).$this->Html->tag('div', 'Correo del Técnico.', array('class' => 'inputmsg') );
+		echo $this->Form->input('sucursal', array('label' => 'Correo de la Sucursal')).$this->Html->tag('div', 'Correo de la Sucursal.', array('class' => 'inputmsg') );
+		echo $this->Form->input('vendedor1', array('label' => 'Correo del vendedor 1')).$this->Html->tag('div', 'Correo del vendedor 1. (opcional)', array('class' => 'inputmsg') );
+		echo $this->Form->input('vendedor2', array('label' => 'Correo del vendedor 2')).$this->Html->tag('div', 'Correo del vendedor 2. (opcional)', array('class' => 'inputmsg') );
+		echo $this->Form->input('vendedor3', array('label' => 'Correo del vendedor 3')).$this->Html->tag('div', 'Correo del vendedor 3. (opcional)', array('class' => 'inputmsg') );
+		echo $this->Form->input('vendedor4', array('label' => 'Correo del vendedor 4')).$this->Html->tag('div', 'Correo del vendedor 4. (opcional)', array('class' => 'inputmsg') );
+		echo $this->Form->input('vendedor5', array('label' => 'Correo del vendedor 5')).$this->Html->tag('div', 'Correo del vendedor 5. (opcional)', array('class' => 'inputmsg') );
+		echo $this->Form->input('vendedor6', array('label' => 'Correo del vendedor 6')).$this->Html->tag('div', 'Correo del vendedor 6. (opcional)', array('class' => 'inputmsg') );
 		
 		
 

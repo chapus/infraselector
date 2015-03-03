@@ -10,7 +10,7 @@
 
 <?php echo $this->Form->create('Amperaje', array('type' => 'file'));
 		
-		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen del Calibre. Es una nota importante para el usuario.','inputmsg');
+		echo $this->Form->input('name', array('label' => 'Nombre Completo')).$this->Html->tag('div', 'Título que aparecerá en el selector, abajo de la imagen del Calibre. Es una nota importante para el usuario.', array('class' => 'inputmsg') );
 
 		
 		echo '<div class="tig_color">';
