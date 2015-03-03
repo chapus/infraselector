@@ -46,10 +46,10 @@ class MaquinasController extends AppController {
 		$this->set('title_for_layout','INFRA - Nueva Máquina de Soldar');
 		if($admin['admin'] == 1) {
 			
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Maquina']['created'] = $date;
+				$this->request->data['Maquina']['created'] = $date;
 				
 				$smallimage = $this->uploadFiles('img/maquinas/thumb', $this->data['Maquina']['smallfile']);
 				$image = $this->uploadFiles('img/maquinas', $this->data['Maquina']['bigfile']);

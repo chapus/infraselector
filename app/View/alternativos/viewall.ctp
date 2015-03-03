@@ -4,21 +4,19 @@
 <script type="text/javascript">
 
 $(function () {
-        $('.item').each(function (index) {
-			$(this).find("tr").mouseover(function() {
-				$(this).css("backgroundColor", "#F1C49A");
-			}).mouseout(function() {
-				if($(this).attr('class') == "trow") {
-				$(this).css("backgroundColor", "#F0F0F0");
-				$(this).css("fontWeight", "normal");
-				} else { $(this).css("backgroundColor", "#FFF"); }
-			}).click(function() {
-				$(this).css("backgroundColor", "#8DBEF3");
-			});
-			
+    $('.item').each(function (index) {
+		$(this).find("tr").mouseover(function() {
+			$(this).css("backgroundColor", "#F1C49A");
+		}).mouseout(function() {
+			if($(this).attr('class') == "trow") {
+			$(this).css("backgroundColor", "#F0F0F0");
+			$(this).css("fontWeight", "normal");
+			} else { $(this).css("backgroundColor", "#FFF"); }
+		}).click(function() {
+			$(this).css("backgroundColor", "#8DBEF3");
 		});
-
 		
+	});
 });
 </script>
 <div class="box-content" style="display:inline-block;">
@@ -31,7 +29,7 @@ $(function () {
 <span class="stitle">Buscador
 <?php
 if(isset($this->data)) {
-	echo $this->Paginator->counter(array('format' => __(' - Se encontraron %count% resultados', true)));
+	echo $this->Paginator->counter(array('format' => __(' - Se encontraron %count% resultados')));
 }
 ?>
 </span>
@@ -157,14 +155,14 @@ foreach($data as $dat) {
 <p class="pagging">
 <?php
 echo $this->Paginator->counter(array(
-'format' => __('Página %page% de %pages%, mostrando %current% equipo(s) alternativo(s) de %count% en total, empezando del equipo alternativo %start%, al %end%', true)
+'format' => __('Página %page% de %pages%, mostrando %current% equipo(s) alternativo(s) de %count% en total, empezando del equipo alternativo %start%, al %end%')
 ));
 ?>	</p>
 	<div class="paging">
-		<?php echo $this->Paginator->prev('<< ' . __('Anterior', true), array(), null, array('class'=>'disabled'));?>
+		<?php echo $this->Paginator->prev('<< ' . __('Anterior'), array(), null, array('class'=>'disabled'));?>
 	 | 	<?php echo $this->Paginator->numbers();?>
  |
-		<?php echo $this->Paginator->next(__('Siguiente', true) . ' >>', array(), null, array('class' => 'disabled'));?>
+		<?php echo $this->Paginator->next(__('Siguiente') . ' >>', array(), null, array('class' => 'disabled'));?>
 	</div>
 
 </div>

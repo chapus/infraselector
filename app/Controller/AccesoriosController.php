@@ -39,14 +39,14 @@ class AccesoriosController extends AppController {
 		$this->set('title_for_layout','INFRA - Material/Calibre - Add Accesorios para Ensamble de Antorcha');
 		if($admin['admin'] == 1) {
 			
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$this->Accesorio->create();
 				if ($this->Accesorio->save($this->data)) {
-					$this->Session->setFlash(__('EL Accesorios para Ensamble de Antorcha ha si creado con éxito', true), 'flash_success');
+					$this->Session->setFlash(__('EL Accesorios para Ensamble de Antorcha ha si creado con éxito'), 'flash_success');
 					$this->redirect(array('action' => 'view'));
 				} else {
-					$this->Session->setFlash(__('No se pudo guardar, intente más tarde', true), 'flash_failure');
+					$this->Session->setFlash(__('No se pudo guardar, intente más tarde'), 'flash_failure');
 				}
 				
 			}
@@ -68,7 +68,7 @@ class AccesoriosController extends AppController {
 		$this->set('title_for_layout','INFRA - Material/Calibre - Edit Accesorios para Ensamble de Antorcha');
 		if($admin['admin'] == 1) {
 			
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				$this->Accesorio->create();
 				if ($this->Accesorio->save($this->data)) {
 					$this->Session->setFlash(__('EL Accesorios para Ensamble de Antorcha ha si editado con éxito', true), 'flash_success');

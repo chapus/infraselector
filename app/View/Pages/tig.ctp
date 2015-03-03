@@ -867,6 +867,7 @@ $("#antorchas").change(function() {
 $.fn.fAntorchas = function() {
     if($('#antorchas option:selected').val() != "") {
        $('#stp5 .left .loader').show();
+            /*
             $.ajax({
                 url: path+'tigs/selectorStep6',
                 data: {'id' : $('#antorchas option:selected').val(),
@@ -895,7 +896,38 @@ $.fn.fAntorchas = function() {
                         
                     });
                 }
-            }); 
+            });
+            */
+           
+           $.ajax({
+                url: path+'tigs/selectorStep61',
+                data: {'id' : $('#antorchas option:selected').val(),
+                'maqid' : $('#maquinas option:selected').val(),
+                'gasid' : $('#gases option:selected').val(),
+                'calibreid' : $('#calibres option:selected').val(),
+                'matid' : $('#materials option:selected').val()},
+                type: 'POST',
+                dataType: 'json',
+                success: function (data) {
+                    $('#stp5 .left .loader').fadeOut(200, function () {
+                        $.fn.fClear(6, 9);
+                        $('#stp5 .right .title').html($('#antorchas option:selected').text());
+                        $("#tungstenos").removeOption(/./);
+                        for(i = 0; i < data.length; i++) {
+                            $.each(data[i], function() {
+                                if(data.length != 1) {
+                                    $("#tungstenos").addOption(this.id, this.name, false);
+                                } else {
+                                    $("#tungstenos").addOption(this.id, this.name);
+                                    $("#tungstenos").fTungstenos();
+                                }
+                            });
+                            $("#tungstenos").focus();
+                        }
+                        
+                    });
+                }
+            });
             
             /*
             ACCESORIO
@@ -956,14 +988,15 @@ $.fn.fAntorchas = function() {
 
 $("#tungstenos").change(function() {
     flag = 0;
-    $("#tungstenos").fAntorchas();
+    $("#tungstenos").fTungstenos();
 });   
 $.fn.fTungstenos = function() {
     if($('#tungstenos option:selected').val() != "") {
-       $('#stp5 .left .loader').show();
+       $('#stp61 .left .loader').show();
             $.ajax({
-                url: path+'tigs/selectorStep61',
+                url: path+'tigs/selectorStep6',
                 data: {'id' : $('#tungstenos option:selected').val(),
+                'antid' : $('#antorchas option:selected').val(),
                 'maqid' : $('#maquinas option:selected').val(),
                 'gasid' : $('#gases option:selected').val(),
                 'calibreid' : $('#calibres option:selected').val(),
@@ -971,9 +1004,9 @@ $.fn.fTungstenos = function() {
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
-                    $('#stp5 .left .loader').fadeOut(200, function () {
+                    $('#stp61 .left .loader').fadeOut(200, function () {
                         $.fn.fClear(6, 9);
-                        $('#stp5 .right .title').html($('#tungstenos option:selected').text());
+                        $('#stp61 .right .title').html($('#tungstenos option:selected').text());
                         $("#aportes").removeOption(/./);
                         for(i = 0; i < data.length; i++) {
                             $.each(data[i], function() {
@@ -989,31 +1022,31 @@ $.fn.fTungstenos = function() {
                         
                     });
                 }
-            }); 
+            });
             
             
-            $('#stp5 .right .image').html('');
-            $('#stp5 .right .loader').show();
+            $('#stp61 .right .image').html('');
+            $('#stp61 .right .loader').show();
             $.ajax({
                 url: path+'tigs/interStep61',
                 data: {'id' : $('#tungstenos option:selected').val()},
                 type: 'POST',
                 dataType: 'json',
                 success: function (data) {
-                    $('#stp5 .right .loader').fadeOut(200, function () {
+                    $('#stp61 .right .loader').fadeOut(200, function () {
                         $.each(data, function() {
-                            $('#stp5 .center .info').html(this.description);
+                            $('#stp61 .center .info').html(this.description);
                             if(this.smallimage != null) {
-                                $('#stp5 .right .image').html('<img src="'+this.smallimage+'" />');
+                                $('#stp61 .right .image').html('<img src="'+this.smallimage+'" />');
                             } else {
-                                $('#stp5 .right .image').html('<img src="'+path+'img/tungstenos/default.png" />');
+                                $('#stp61 .right .image').html('<img src="'+path+'img/tungstenos/default.png" />');
                             }
                             });
                         
                     });
                 }
             }); 
-    } else { $.fn.fClearInner( $('#stp5') ); $.fn.fClear(6, 9); $('#stp5 .center .info').html('Elija el tipo de antorcha que mejor se adapte a la maquina para soldar seleccionada y a sus procesos de soldadura. El sistema puede darle una sola opción por default de acuerdo a sus necesidades.'); }
+    } else { $.fn.fClearInner( $('#stp61') ); $.fn.fClear(6, 9); $('#stp61 .center .info').html('Elija el tipo de tungsteno que mejor se adapte a la antorcha seleccionada y a sus procesos de soldadura. El sistema puede darle una sola opción por defecto de acuerdo a sus necesidades.'); }
 }
 
    
@@ -1028,6 +1061,7 @@ $.fn.fAportes = function() {
                 url: path+'tigs/selectorStep7',
                 data: {'id' : $('#aportes option:selected').val(),
                 'antid' : $('#antorchas option:selected').val(),
+                'tunid' : $('#tungstenos option:selected').val(),
                 'maqid' : $('#maquinas option:selected').val(),
                 'gasid' : $('#gases option:selected').val(),
                 'calibreid' : $('#calibres option:selected').val(),

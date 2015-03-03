@@ -45,10 +45,10 @@ class AlternativosController extends AppController {
 		$this->set('title_for_layout','INFRA - Nuevo Equipo Alternativo');
 		if($admin['admin'] == 1) {
 			
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Alternativo']['created'] = $date;
+				$this->request->data['Alternativo']['created'] = $date;
 				
 				$smallimage = $this->uploadFiles('img/alternativos/thumb', $this->data['Alternativo']['smallfile']);
 				$image = $this->uploadFiles('img/alternativos', $this->data['Alternativo']['bigfile']);
@@ -83,11 +83,11 @@ class AlternativosController extends AppController {
 		$this->set('title_for_layout','INFRA - Editar Equipo Alternativo');
 		if($admin['admin'] == 1) {
 		
-			if (!$id && empty($this->data)) {
+			if (!$id && empty($this->request->data)) {
 				$this->Session->setFlash(__('Equipo Alternativo inválido', true), 'flash_failure');
 				$this->redirect(array('action' => 'index'));
 			}
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$smallimage = $this->uploadFiles('img/alternativos/thumb', $this->data['Alternativo']['smallfile']);
 				$image = $this->uploadFiles('img/alternativos', $this->data['Alternativo']['bigfile']);

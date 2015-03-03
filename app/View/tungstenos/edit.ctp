@@ -9,7 +9,7 @@
 <div id='login_loading' style='display:none; float:right; width:45px; margin-top:8px; margin-right:25px;'></div>
 <h3><?= $this->Html->image('infrasmall.png'); ?> Editar material de aporte</h3>
 
-<?php echo $this->Form->create('Aporte', array('type' => 'file'));
+<?php echo $this->Form->create('Tungsteno', array('type' => 'file'));
 echo $this->Form->input('id');
 
 		echo $this->Form->input('codigo', array('label' => 'Código')).$this->Html->tag('div', 'Código del Producto', array('class' => 'inputmsg') );
@@ -44,7 +44,7 @@ echo $this->Form->input('id');
 	echo '<div class="tig_color">';
 	echo $this->Form->input('ptig', array('type' => 'checkbox', 'label' => '¿Pertenece al proceso TIG?</label?')); 
 		echo $this->Form->input('TigAntorcha');
-		echo $this->Form->input('TigRegulador');
+		echo $this->Form->input('TigAporte');
 	echo '</div>';
 	
 	
@@ -57,9 +57,9 @@ echo $this->Form->input('id');
 	
 	echo '</div>'; 
 	
-	$urlchingon = str_replace(array('_', '-'), array('/', ':'), $url);
+	//debug($this->request->url);
 	
-	echo $this->Form->input('url', array('label' => '', 'type' => 'hidden', 'value' => $urlchingon));
+	echo $this->Form->input('url', array('label' => '', 'type' => 'hidden', 'value' => $this->request->url));
 			
 ?>
 

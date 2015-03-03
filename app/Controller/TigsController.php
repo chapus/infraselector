@@ -6,7 +6,8 @@ class TigsController extends AppController {
 	var $components = array('RequestHandler', 'Session', 'Email');
 	
 	
-	var $uses = array('Tig', 'Material', 'Calibre', 'Ccalidade', 'Gase', 'Maquina', 'Antorcha', 'Tungsteno', 'Aporte', 'Regulador', 'Alternativo', 'Proteccione', 'Seccion', 'TigCalibreCalidadgase', 'TigCalidadgaseGase', 'Calidadgase', 'TigAmperajeMaterial', 'TigAmperajeCalibre', 'Amperaje', 'TigAccesorioMaterial', 'TigAccesorioCalibre', 'Accesorio', 'Ciudade');
+	var $uses = array('Tig', 'Material', 'Calibre', 'Ccalidade', 'Gase', 'Maquina', 'Antorcha', 
+		'Tungsteno', 'Aporte', 'Regulador', 'Alternativo', 'Proteccione', 'Seccion', 'TigCalibreCalidadgase', 'TigCalidadgaseGase', 'Calidadgase', 'TigAmperajeMaterial', 'TigAmperajeCalibre', 'Amperaje', 'TigAccesorioMaterial', 'TigAccesorioCalibre', 'Accesorio', 'Ciudade');
 	
 	function s1() {
 		$result = array();
@@ -808,7 +809,7 @@ class TigsController extends AppController {
 				$aportes = $this->Tig->find('all', array(
 					'fields' => array('DISTINCT Tig.aporte_id'),
 					'conditions' => array('Tig.material_id' => $_POST['matid'], 'Tig.calibre_id' => $_POST['calibreid'], 'Tig.gase_id' => $_POST['gasid'],
-					'Tig.maquina_id' => $_POST['maqid'], 'Tig.antorcha_id' => $_POST['id']),
+					'Tig.maquina_id' => $_POST['maqid'], 'Tig.tungsteno_id' => $_POST['id'], 'Tig.antorcha_id' => $_POST['antid']),
 					'order' => array('Tig.aporte_id ASC')
 				));
 				
@@ -845,6 +846,55 @@ class TigsController extends AppController {
 		Configure::write('debug', 0);
 		exit();	
 	}
+
+
+	function selectorStep61() {
+		if($this->RequestHandler->isAjax()) {
+			if($_SERVER['REQUEST_METHOD'] == "POST") {
+				$this->autoRender = false;
+				
+				$result = array();
+				
+				$tungstenos = $this->Tig->find('all', array(
+					'fields' => array('DISTINCT Tig.tungsteno_id'),
+					'conditions' => array('Tig.material_id' => $_POST['matid'], 'Tig.calibre_id' => $_POST['calibreid'], 'Tig.gase_id' => $_POST['gasid'],
+					'Tig.maquina_id' => $_POST['maqid'], 'Tig.antorcha_id' => $_POST['id']),
+					'order' => array('Tig.tungsteno_id ASC')
+				));
+				
+				$this->Tungsteno->recursive = -1;
+				
+				foreach($tungstenos as $tungsteno) {
+					$hold = $this->Tungsteno->find('first', array(
+						'conditions' => array('Tungsteno.ptig' => 1, 'Tungsteno.id' => $tungsteno['Tig']['tungsteno_id']),
+						'fields' => array('Tungsteno.id', 'Tungsteno.name')
+					));
+					array_push($result,$hold);
+				}
+				
+				return(json_encode($result));
+				
+			}
+		}
+		Configure::write('debug', 0);
+		exit();	
+	}
+	function interStep61() {
+		if($this->RequestHandler->isAjax()) {
+			if($_SERVER['REQUEST_METHOD'] == "POST") {
+				$this->autoRender = false;
+				
+				$this->Tungsteno->recursive = -1;
+				$result = $this->Tungsteno->find('first', array(
+						'conditions' => array('Tungsteno.ptig' => 1, 'Tungsteno.id' => $_POST['id']),
+						'fields' => array('Tungsteno.id', 'Tungsteno.name', 'Tungsteno.short', 'Tungsteno.description', 'Tungsteno.smallimage', 'Tungsteno.infra_link')
+					));
+				return(json_encode($result));
+			}
+		}
+		Configure::write('debug', 0);
+		exit();	
+	}
 	
 
 	function selectorStep7() {
@@ -857,7 +907,7 @@ class TigsController extends AppController {
 				$reguladores = $this->Tig->find('all', array(
 					'fields' => array('DISTINCT Tig.regulador_id'),
 					'conditions' => array('Tig.material_id' => $_POST['matid'], 'Tig.calibre_id' => $_POST['calibreid'], 'Tig.gase_id' => $_POST['gasid'],
-					'Tig.maquina_id' => $_POST['maqid'], 'Tig.antorcha_id' => $_POST['antid'], 'Tig.aporte_id' => $_POST['id']),
+					'Tig.maquina_id' => $_POST['maqid'], 'Tig.antorcha_id' => $_POST['antid'], 'Tig.tungsteno_id' => $_POST['tunid'], 'Tig.aporte_id' => $_POST['id']),
 					'order' => array('Tig.regulador_id ASC')
 				));
 				

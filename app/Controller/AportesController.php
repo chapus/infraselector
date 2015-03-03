@@ -46,10 +46,10 @@ class AportesController extends AppController {
 		$this->set('title_for_layout','INFRA - Nuevo Material de Aporte');
 		if($admin['admin'] == 1) {
 		
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Aporte']['created'] = $date;
+				$this->request->data['Aporte']['created'] = $date;
 					
 				$smallimage = $this->uploadFiles('img/aportes/thumb', $this->data['Aporte']['smallfile']);
 				$image = $this->uploadFiles('img/aportes', $this->data['Aporte']['bigfile']);
@@ -92,10 +92,10 @@ class AportesController extends AppController {
 				$this->Session->setFlash(__('Invalid aporte', true));
 				$this->redirect(array('action' => 'index'));
 			}
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Aporte']['modified'] = $date;
+				$this->request->data['Aporte']['modified'] = $date;
 				
 				$smallimage = $this->uploadFiles('img/aportes/thumb', $this->data['Aporte']['smallfile']);
 				$image = $this->uploadFiles('img/aportes', $this->data['Aporte']['bigfile']);

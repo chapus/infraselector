@@ -46,7 +46,7 @@ class TungstenosController extends AppController {
 		$this->set('title_for_layout','INFRA - Nuevo Tungsteno');
 		if($admin['admin'] == 1) {
 		
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
 				$this->request->data['Tungsteno']['created'] = $date;
@@ -81,17 +81,17 @@ class TungstenosController extends AppController {
 
 	function edit($id = null, $url = null) {
 		$admin = parent::checkSession($_SERVER['REQUEST_URI']);
-		$this->set('title_for_layout','INFRA - Editar Material de Tungsteno');
+		$this->set('title_for_layout','INFRA - Editar Tungsteno');
 		if($admin['admin'] == 1) {
 		
 			if (!$id && empty($this->data)) {
 				$this->Session->setFlash(__('Invalid tungsteno'));
 				$this->redirect(array('action' => 'index'));
 			}
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Tungsteno']['modified'] = $date;
+				$this->request->data['Tungsteno']['modified'] = $date;
 				
 				$smallimage = $this->uploadFiles('img/tungstenos/thumb', $this->data['Tungsteno']['smallfile']);
 				$image = $this->uploadFiles('img/tungstenos', $this->data['Tungsteno']['bigfile']);
@@ -108,13 +108,13 @@ class TungstenosController extends AppController {
 				
 				if ($this->Tungsteno->save($this->data)) {
 					$this->Session->setFlash(__('El Material de Tungsteno ha sido editado con éxito'), 'flash_success');
-					$this->redirect('/'.$this->data['Tungsteno']['url']);
+					$this->redirect( "/tungstenos/viewall" );
 				} else {
 					$this->Session->setFlash(__('El Material de Tungsteno no se pudo editar, intenta más tarde'), 'flash_failure');
 				}
 			}
-			if (empty($this->data)) {
-				$this->data = $this->Tungsteno->read(null, $id);
+			if (empty($this->request->data)) {
+				$this->request->data = $this->Tungsteno->read(null, $id);
 			}
 			$tigAntorchas = $this->Tungsteno->TigAntorcha->find('list', array('conditions' => array('TigAntorcha.ptig' => 1)) );
 			$tigAportes = $this->Tungsteno->TigAporte->find('list', array('conditions' => array('TigAporte.ptig' => 1)) );
