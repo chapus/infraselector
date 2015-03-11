@@ -123,9 +123,9 @@ $.fn.fCcalidades = function() {
 					for(i = 0; i < data.length; i++) {
 						$.each(data[i].TigGase, function() {
 							if(data[i].TigGase.length != 1) {
-								$("#TigGases").addOption(this.id, this.name, false);
+								$("#TigGases").addOption(this.id, this.name+' cod.'+this.codigo, false);
 							} else {
-								$("#TigGases").addOption(this.id, this.name);
+								$("#TigGases").addOption(this.id, this.name+' cod.'+this.codigo);
 								$("#TigGases").fGases();
 							}
 						});
@@ -154,9 +154,9 @@ $.fn.fGases = function() {
 					for(i = 0; i < data.length; i++) {
 						$.each(data[i].TigMaquina, function() {
 							if(data[i].TigMaquina.length != 1) {
-								$("#TigMaquinas").addOption(this.id, this.name, false);
+								$("#TigMaquinas").addOption(this.id, this.name+' cod.'+this.codigo, false);
 							} else {
-								$("#TigMaquinas").addOption(this.id, this.name);
+								$("#TigMaquinas").addOption(this.id, this.name+' cod.'+this.codigo);
 								$("#TigMaquinas").fMaquinas();
 							}
 						});
@@ -185,9 +185,9 @@ $.fn.fMaquinas = function() {
 						for(i = 0; i < data.length; i++) {
 							$.each(data[i].TigAntorcha, function() {
 								if(data[i].TigAntorcha.length != 1) {
-									$("#TigAntorchas").addOption(this.id, this.name, false);
+									$("#TigAntorchas").addOption(this.id, this.name+' cod.'+this.codigo, false);
 								} else {
-									$("#TigAntorchas").addOption(this.id, this.name);
+									$("#TigAntorchas").addOption(this.id, this.name+' cod.'+this.codigo);
 									$("#TigAntorchas").fAntorchas();
 								}
 							});
@@ -215,9 +215,9 @@ $.fn.fAntorchas = function() {
 						for(i = 0; i < data.length; i++) {
 							$.each(data[i].TigTungsteno, function() {
 								if(data[i].TigTungsteno.length != 1) {
-									$("#TigTungstenos").addOption(this.id, this.name, false);
+									$("#TigTungstenos").addOption(this.id, this.name+' cod.'+this.codigo, false);
 								} else {
-									$("#TigTungstenos").addOption(this.id, this.name);
+									$("#TigTungstenos").addOption(this.id, this.name+' cod.'+this.codigo);
 									$("#TigTungstenos").fTungstenos();
 								}
 							});
@@ -245,9 +245,9 @@ $.fn.fTungstenos = function() {
 						for(i = 0; i < data.length; i++) {
 							$.each(data[i].TigAporte, function() {
 								if(data[i].TigAporte.length != 1) {
-									$("#TigAportes").addOption(this.id, this.name, false);
+									$("#TigAportes").addOption(this.id, this.name+' cod.'+this.codigo, false);
 								} else {
-									$("#TigAportes").addOption(this.id, this.name);
+									$("#TigAportes").addOption(this.id, this.name+' cod.'+this.codigo);
 									$("#TigAportes").fAportes();
 								}
 							});
@@ -274,9 +274,9 @@ $.fn.fAportes = function() {
 						for(i = 0; i < data.length; i++) {
 							$.each(data[i].TigRegulador, function() {
 								if(data[i].TigRegulador.length != 1) {
-									$("#TigReguladores").addOption(this.id, this.name, false);
+									$("#TigReguladores").addOption(this.id, this.name+' cod.'+this.codigo, false);
 								} else {
-									$("#TigReguladores").addOption(this.id, this.name);
+									$("#TigReguladores").addOption(this.id, this.name+' cod.'+this.codigo);
 									$("#TigReguladores").fReguladores();
 								}
 							});
