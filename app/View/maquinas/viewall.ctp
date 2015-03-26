@@ -154,7 +154,7 @@ foreach($data as $dat) {
           <td><?php 
           //debug($this->request->url);
 		  echo $this->Html->link('Ver', array('controller' => '', 'action' => 'maquinasdesoldar', $dat['Maquina']['id']))."<br />"; 
-		  echo $this->Html->link('Editar', array('controller' => 'maquinas', 'action' => 'edit', $dat['Maquina']['id'].'/'.str_replace(array('/', ':'), array('_', '-'), $this->request->url) ))."<br />"; 
+		  echo $this->Html->link('Editar', array('controller' => 'maquinas', 'action' => 'edit', $dat['Maquina']['id'] ))."<br />"; 
 		  ?></td>
         </tr>
 <?php

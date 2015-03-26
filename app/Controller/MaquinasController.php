@@ -91,23 +91,23 @@ class MaquinasController extends AppController {
 		$this->set('title_for_layout','INFRA - Editar Máquina de Soldar');
 		if($admin['admin'] == 1) {
 		
-			if (!$id && empty($this->data)) {
+			if (!$id && empty($this->request->data)) {
 				$this->Session->setFlash(__('Máquina de Soldar inválida', true), 'flash_failure');
 				$this->redirect(array('action' => 'index'));
 			}
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$smallimage = $this->uploadFiles('img/maquinas/thumb', $this->data['Maquina']['smallfile']);
 				$image = $this->uploadFiles('img/maquinas', $this->data['Maquina']['bigfile']);
 				
 				if(array_key_exists('urls', $smallimage)) {  
 					// save the url in the form data  
-					$this->data['Maquina']['smallimage'] = $smallimage['urls'][0]; 
+					$this->request->data['Maquina']['smallimage'] = $smallimage['urls'][0]; 
 				}
 				
 				if(array_key_exists('urls', $image)) {  
 					// save the url in the form data  
-					$this->data['Maquina']['image'] = $image['urls'][0]; 
+					$this->request->data['Maquina']['image'] = $image['urls'][0]; 
 				}
 				
 				if ($this->Maquina->save($this->data)) {
@@ -117,8 +117,8 @@ class MaquinasController extends AppController {
 					$this->Session->setFlash(__('La Máquina de Soldar no se puedo editar, intenta más tarde', true), 'flash_failure');
 				}
 			}
-			if (empty($this->data)) {
-				$this->data = $this->Maquina->read(null, $id);
+			if (empty($this->request->data)) {
+				$this->request->data = $this->Maquina->read(null, $id);
 			}
 			$smawCalibres = $this->Maquina->SmawCalibre->find('list', array('conditions' => array('SmawCalibre.psmaw' => 1)) );
 			$smawAportes = $this->Maquina->SmawAporte->find('list', array('conditions' => array('SmawAporte.psmaw' => 1)) );

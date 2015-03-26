@@ -83,26 +83,26 @@ class MicroalambresController extends AppController {
 		$this->set('title_for_layout','INFRA - Editar Alimentador de Micro Alambre');
 		if($admin['admin'] == 1) {
 		
-			if (!$id && empty($this->data)) {
+			if (!$id && empty($this->request->data)) {
 				$this->Session->setFlash(__('Invalid microalambre', true));
 				$this->redirect(array('action' => 'index'));
 			}
-			if (!empty($this->data)) {
+			if (!empty($this->request->data)) {
 				
 				$date = date("Y-m-d H:i:s");
-				$this->data['Microalambre']['modified'] = $date;
+				$this->request->data['Microalambre']['modified'] = $date;
 				
 				$smallimage = $this->uploadFiles('img/alimentadores/thumb', $this->data['Microalambre']['smallfile']);
 				$image = $this->uploadFiles('img/alimentadores', $this->data['Microalambre']['bigfile']);
 				
 				if(array_key_exists('urls', $smallimage)) {  
 					// save the url in the form data  
-					$this->data['Microalambre']['smallimage'] = $smallimage['urls'][0]; 
+					$this->request->data['Microalambre']['smallimage'] = $smallimage['urls'][0]; 
 				}
 				
 				if(array_key_exists('urls', $image)) {  
 					// save the url in the form data  
-					$this->data['Microalambre']['image'] = $image['urls'][0]; 
+					$this->request->data['Microalambre']['image'] = $image['urls'][0]; 
 				}
 
 				
@@ -113,8 +113,8 @@ class MicroalambresController extends AppController {
 					$this->Session->setFlash(__('El Alimentador de Micro Alambre no se pudo editar, intenta más tarde', true), 'flash_failure');
 				}
 			}
-			if (empty($this->data)) {
-				$this->data = $this->Microalambre->read(null, $id);
+			if (empty($this->request->data)) {
+				$this->request->data = $this->Microalambre->read(null, $id);
 			}
 			$migAntorchas = $this->Microalambre->MigAntorcha->find('list', array('conditions' => array('MigAntorcha.pmig' => 1)) );
 			$migMaquinas = $this->Microalambre->MigMaquina->find('list', array('conditions' => array('MigMaquina.pmig' => 1)) );
