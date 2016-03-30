@@ -1,26 +1,23 @@
-<?php
-
-?>
 <style>
 
-table#footer {
-display: inline-table;
-border-collapse: separate;
-border-spacing: 2px 2px;
-border-color: gray;
-}
+  table#footer {
+  display: inline-table;
+  border-collapse: separate;
+  border-spacing: 2px 2px;
+  border-color: gray;
+  }
 
-.style103 {
-color: #666;
-font-size: 11px;
-font-family: Verdana, "Verdana Ref";
-}
+  .style103 {
+  color: #666;
+  font-size: 11px;
+  font-family: Verdana, "Verdana Ref";
+  }
 
-.Estilo3 {
-font-family: Verdana, Arial, Helvetica, sans-serif;
-font-size: 10px;
-color: #333;
-}
+  .Estilo3 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #333;
+  }
 
 </style>
 
@@ -34,12 +31,12 @@ color: #333;
         <td>&nbsp;</td>
       </tr>
       <tr>
-        <td align="center"><span class="Estilo3">2008© INFRA, S.A. DE C.V. <a href="http://www.infra.com.mx/extras/legales.htm" class="Estilo25">Legales</a></span></td>
+        <td align="center"><span class="Estilo3"><?= date("Y"); ?>© INFRA, S.A. DE C.V. <a href="http://www.infra.com.mx/extras/legales.htm" class="Estilo25">Legales</a></span></td>
       </tr>
       <tr>
       	<td align="center"><span class="Estilo3">Infra S.A. de C.V., dando cumplimiento a la "Ley Federal de protección de datos personales en posesión de los particulares", <br />pone a su disposición nuestro aviso de privacidad en nuestro sitio WEB.<br /> <a href="http://www.infra.com.mx/avisodeprivacidad.html" target="_blank">Aviso de Privacidad</a></span></td>
       </tr>
       <tr>
-        <td align="center"><span class="Estilo3">Powered by Spider Technologies Corporation ©2011 <a href="http://www.spidertechcorp.com" class="Estilo25">SpiderTechCorp.com</a></span></td>
+        <td align="center"><span class="Estilo3">Powered by Spider Technologies Corporation ©<?= date("Y"); ?> <a href="http://www.spidertechcorp.com" class="Estilo25">SpiderTechCorp.com</a></span></td>
       </tr>
     </tbody></table>

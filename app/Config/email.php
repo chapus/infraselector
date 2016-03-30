@@ -48,12 +48,11 @@ class EmailConfig {
 
 	public $smtp = array(
 		'transport' => 'Smtp',
-		'from' => array('no-reply@infra-selector.com.mx' => 'INFRA Selector'),
-		'host' => 'localhost',
+		'from' => array('selector@infra.com.mx' => 'INFRA Selector'),
+		'host' => '192.168.0.18',
 		'port' => 25,
 		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
+		'username' => 'selector@infra.com.mx',
 		'client' => null,
 		'log' => false,
 		//'charset' => 'utf-8',
@@ -62,13 +61,12 @@ class EmailConfig {
 
 	public $test = array(
 		'transport' => 'Smtp',
-		'from' => array('no-reply@infra-selector.com.mx' => 'INFRA Selector'),
+		'from' => array('soporte@spidertechcorp.com' => 'INFRA Selector'),
 		'host' => 'ssl://smtp.gmail.com',
 		'port' => 465,
 		'timeout' => 30,
-		'username' => 'contacto@infra-selector.com.mx',
-		'password' => 's3rg10s33',
-		'client' => null,
+		'username' => 'soporte@spidertechcorp.com',
+		'password' => 'testxxx',
 		'log' => false,
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',

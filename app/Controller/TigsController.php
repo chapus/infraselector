@@ -1432,9 +1432,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($maquina['Maquina']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($maquina['Maquina']['smallimage']) ? "" : '<img src="'.$maquina['Maquina']['smallimage'].'" />';
 		$html = '
 		<h1>Máquina de Soldar</h1>
-		<p><img src="'.$maquina['Maquina']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$maquina['Maquina']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1446,9 +1447,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($antorcha['Antorcha']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($antorcha['Antorcha']['smallimage']) ? "" : '<img src="'.$antorcha['Antorcha']['smallimage'].'" />';
 		$html = '
 		<h1>Antorcha</h1>
-		<p><img src="'.$antorcha['Antorcha']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$antorcha['Antorcha']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1459,9 +1461,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($aporte['Aporte']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($aporte['Aporte']['smallimage']) ? "" : '<img src="'.$aporte['Aporte']['smallimage'].'" />';
 		$html = '
 		<h1>Material de Aporte</h1>
-		<p><img src="'.$aporte['Aporte']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$aporte['Aporte']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1472,9 +1475,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($regulador['Regulador']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($regulador['Regulador']['smallimage']) ? "" : '<img src="'.$regulador['Regulador']['smallimage'].'" />';
 		$html = '
 		<h1>Regulador de Presión</h1>
-		<p><img src="'.$regulador['Regulador']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$regulador['Regulador']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1516,7 +1520,7 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 		$pdf->Output("Selector_TIG.pdf",'I');
 		
 		$this->layout = 'pdf'; //this will use the pdf.ctp layout 
-        $this->render(); 
+    $this->render(); 
 		
 	} else {
 		$this->Session->setFlash(__('La selección que buscas no existe. Busca de nuevo.', true), 'flash_failure');

@@ -57,78 +57,81 @@ class CustomersController extends AppController {
 	
 	
 	function _sendEmail($data = null) {
-		
-		//$data = $this->Customer->find('first', array('conditions' => array('Customer.id' => $id) ) );
-		$proceso = '';
-		
-		if($data['Customer']['selector'] == 1) {
-			$proceso = "Proceso MIG";
-		} elseif($data['Customer']['selector'] == 2) {
-			$proceso = "Proceso TIG";
-		} elseif($data['Customer']['selector'] == 3) {
-			$proceso = "Proceso SMAW";
-		} elseif($data['Customer']['selector'] == 4) {
-			$proceso = "Proceso PAC";
-		}
-		
-		$mandara = array();
-		
-		$emials = $this->Customer->Ciudade->find('first', array('conditions' => array('Ciudade.id' => $data['Customer']['ciudade_id']) ) );
-		if(isset($emials) ) {
-			if($emials['Ciudade']['gerente'] != "") {
-				array_push($mandara, $emials['Ciudade']['gerente']);
+		try {
+			//$data = $this->Customer->find('first', array('conditions' => array('Customer.id' => $id) ) );
+			$proceso = '';
+			
+			if($data['Customer']['selector'] == 1) {
+				$proceso = "Proceso MIG";
+			} elseif($data['Customer']['selector'] == 2) {
+				$proceso = "Proceso TIG";
+			} elseif($data['Customer']['selector'] == 3) {
+				$proceso = "Proceso SMAW";
+			} elseif($data['Customer']['selector'] == 4) {
+				$proceso = "Proceso PAC";
 			}
-			if($emials['Ciudade']['tecnico'] != "") {
-				array_push($mandara, $emials['Ciudade']['tecnico']);
+			
+			$mandara = [];
+			$emials = [];
+			$emials = $this->Customer->Ciudade->find('first', array('conditions' => array('Ciudade.id' => $data['Customer']['ciudade_id']) ) );
+			if(isset($emials) ) {
+				if($emials['Ciudade']['gerente'] != "") {
+					array_push($mandara, $emials['Ciudade']['gerente']);
+				}
+				if($emials['Ciudade']['tecnico'] != "") {
+					array_push($mandara, $emials['Ciudade']['tecnico']);
+				}
+				if($emials['Ciudade']['sucursal'] != "") {
+					array_push($mandara, $emials['Ciudade']['sucursal']);
+				}
+				if($emials['Ciudade']['vendedor1'] != "") {
+					array_push($mandara, $emials['Ciudade']['vendedor1']);
+				}
+				if($emials['Ciudade']['vendedor2'] != "") {
+					array_push($mandara, $emials['Ciudade']['vendedor2']);
+				}
+				if($emials['Ciudade']['vendedor3'] != "") {
+					array_push($mandara, $emials['Ciudade']['vendedor3']);
+				}
+				if($emials['Ciudade']['vendedor4'] != "") {
+					array_push($mandara, $emials['Ciudade']['vendedor4']);
+				}
+				if($emials['Ciudade']['vendedor5'] != "") {
+					array_push($mandara, $emials['Ciudade']['vendedor5']);
+				}
+				if($emials['Ciudade']['vendedor6'] != "") {
+					array_push($mandara, $emials['Ciudade']['vendedor6']);
+				}
 			}
-			if($emials['Ciudade']['sucursal'] != "") {
-				array_push($mandara, $emials['Ciudade']['sucursal']);
-			}
-			if($emials['Ciudade']['vendedor1'] != "") {
-				array_push($mandara, $emials['Ciudade']['vendedor1']);
-			}
-			if($emials['Ciudade']['vendedor2'] != "") {
-				array_push($mandara, $emials['Ciudade']['vendedor2']);
-			}
-			if($emials['Ciudade']['vendedor3'] != "") {
-				array_push($mandara, $emials['Ciudade']['vendedor3']);
-			}
-			if($emials['Ciudade']['vendedor4'] != "") {
-				array_push($mandara, $emials['Ciudade']['vendedor4']);
-			}
-			if($emials['Ciudade']['vendedor5'] != "") {
-				array_push($mandara, $emials['Ciudade']['vendedor5']);
-			}
-			if($emials['Ciudade']['vendedor6'] != "") {
-				array_push($mandara, $emials['Ciudade']['vendedor6']);
-			}
-		}
-		
-		$mandara = array_filter(array_map('trim', $mandara));
-		
-		$Email = new CakeEmail();
+			
+			$mandara = array_filter(array_map('trim', $mandara));
+			
+			$Email = new CakeEmail();
 
-		//FOR TESTING
-		$Email->config('test');
-		$mandara = array('sergio.pereda@spidertechcorp.com');
-		//FOR TESTING
-		
-		$Email->to($mandara);
-		//$this->Email->bcc( array('soporte@spidertechcorp.com', 'publicidad@infra.com.mx', 'rcampos@infra.com.mx') );  
-		//$this->Email->bcc( array('soporte@spidertechcorp.com') );  
-		$Email->replyTo('no-reply@infra-selector.com.mx');
-		$Email->from('no-reply@infra-selector.com.mx', 'Selector INFRA - '.$proceso);
-		$Email->subject($data['Customer']['name'].' solicitó una cotización'); // note no '.ctp'
-		
-		$Email->template('newcotizacion');
-		$Email->emailFormat('html'); // because we like to send pretty mail
-		//debug($data);
-		$Email->viewVars( array('user' => $data) );
-		
-		$Email->send();
-		
-		//$this->set('smtp_errors', $this->Email->smtpError);
-		
+			//FOR TESTING
+			$Email->config('smtp');
+			//$mandara = array('sergio.pereda@spidertechcorp.com');
+			//FOR TESTING
+			debug($mandara);
+			$Email->to($mandara);
+			//$this->Email->bcc( array('soporte@spidertechcorp.com', 'publicidad@infra.com.mx', 'rcampos@infra.com.mx') );  
+			//$this->Email->bcc( array('soporte@spidertechcorp.com') );  
+			$Email->replyTo('selector@infra.com.mx');
+			$Email->from('selector@infra.com.mx', 'Selector INFRA - '.$proceso);
+			$Email->subject($data['Customer']['name'].' solicitó una cotización'); // note no '.ctp'
+			
+			$Email->template('newcotizacion');
+			$Email->emailFormat('html'); // because we like to send pretty mail
+			//debug($data);
+			$Email->viewVars( array('user' => $data) );
+			
+			$Email->send();
+			//$this->set('smtp_errors', $this->Email->smtpError);
+		} catch (Exception $e) {
+			$this->log("No se pudo mandar el correo. Error: ".$e, 'debug');
+		} finally {
+
+		}
 	}
 	
 	
