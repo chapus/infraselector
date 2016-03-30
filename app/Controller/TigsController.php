@@ -1490,9 +1490,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 		
 			$content = strip_tags($alternativo['Alternativo']['description'], $allow); 
 			$content = clean_inside_tags($content,$allow);
+			$img = empty($alternativo['Alternativo']['smallimage']) ? "" : '<img src="'.$alternativo['Alternativo']['smallimage'].'" />';
 			$html = '
 			<h1>Equipos Alternativos</h1>
-			<p><img src="'.$alternativo['Alternativo']['smallimage'].'" /></p>
+			<p>'.$img.'</p>
 			<p>'.$alternativo['Alternativo']['name'].'</p>
 			<p>'.$content.'</p>
 			';
@@ -1504,9 +1505,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 		
 			$content = strip_tags($proteccion['Proteccione']['description'], $allow); 
 			$content = clean_inside_tags($content,$allow);
+			$img = empty($proteccion['Proteccione']['smallimage']) ? "" : '<img src="'.$proteccion['Proteccione']['smallimage'].'" />';
 			$html = '
 			<h1>Artículo de Protección</h1>
-			<p><img src="'.$proteccion['Proteccione']['smallimage'].'" /></p>
+			<p>'.$img.'</p>
 			<p>'.$proteccion['Proteccione']['name'].'</p>
 			<p>'.$content.'</p>
 			';

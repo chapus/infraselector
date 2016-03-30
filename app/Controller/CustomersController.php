@@ -71,7 +71,7 @@ class CustomersController extends AppController {
 				$proceso = "Proceso PAC";
 			}
 			
-			$mandara = [];
+			$mandara = ["emota@infra.com.mx"];
 			$emials = [];
 			$emials = $this->Customer->Ciudade->find('first', array('conditions' => array('Ciudade.id' => $data['Customer']['ciudade_id']) ) );
 			if(isset($emials) ) {
@@ -112,7 +112,7 @@ class CustomersController extends AppController {
 			$Email->config('smtp');
 			//$mandara = array('sergio.pereda@spidertechcorp.com');
 			//FOR TESTING
-			debug($mandara);
+			//debug($mandara);
 			$Email->to($mandara);
 			//$this->Email->bcc( array('soporte@spidertechcorp.com', 'publicidad@infra.com.mx', 'rcampos@infra.com.mx') );  
 			//$this->Email->bcc( array('soporte@spidertechcorp.com') );  

@@ -1258,9 +1258,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($gas['Gase']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($gas['Gase']['smallimage']) ? "" : '<img src="'.$gas['Gase']['smallimage'].'" />';
 		$html = '
 		<h1>Gas de Protección</h1>
-		<p><img src="'.$gas['Gase']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$gas['Gase']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1272,9 +1273,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 		$content = strip_tags($maquina['Maquina']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
 		//$content = removeemptytags($content);
+		$img = empty($maquina['Maquina']['smallimage']) ? "" : '<img src="'.$maquina['Maquina']['smallimage'].'" />';
 		$html = '
 		<h1>Máquina de Soldar</h1>
-		<p><img src="'.$maquina['Maquina']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$maquina['Maquina']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1286,9 +1288,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 		
 			$content = strip_tags($microalambre['Microalambre']['description'], $allow); 
 			$content = clean_inside_tags($content,$allow);
+			$img = empty($microalambre['Microalambre']['smallimage']) ? "" : '<img src="'.$microalambre['Microalambre']['smallimage'].'" />';
 			$html = '
 			<h1>Alimentador de Microalambre</h1>
-			<p><img src="'.$microalambre['Microalambre']['smallimage'].'" /></p>
+			<p>'.$img.'</p>
 			<p>'.$microalambre['Microalambre']['name'].'</p>
 			<p>'.$content.'</p>
 			';
@@ -1300,9 +1303,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($antorcha['Antorcha']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($antorcha['Antorcha']['smallimage']) ? "" : '<img src="'.$antorcha['Antorcha']['smallimage'].'" />';
 		$html = '
 		<h1>Antorcha</h1>
-		<p><img src="'.$antorcha['Antorcha']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$antorcha['Antorcha']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1313,9 +1317,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($aporte['Aporte']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($aporte['Aporte']['smallimage']) ? "" : '<img src="'.$aporte['Aporte']['smallimage'].'" />';
 		$html = '
 		<h1>Material de Aporte</h1>
-		<p><img src="'.$aporte['Aporte']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$aporte['Aporte']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1326,9 +1331,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 	
 		$content = strip_tags($regulador['Regulador']['description'], $allow); 
 		$content = clean_inside_tags($content,$allow);
+		$img = empty($regulador['Regulador']['smallimage']) ? "" : '<img src="'.$regulador['Regulador']['smallimage'].'" />';
 		$html = '
 		<h1>Regulador de Presión</h1>
-		<p><img src="'.$regulador['Regulador']['smallimage'].'" /></p>
+		<p>'.$img.'</p>
 		<p>'.$regulador['Regulador']['name'].'</p>
 		<p>'.$content.'</p>
 		';
@@ -1339,9 +1345,10 @@ function steppdf($mat = null, $matid = null, $cal = null, $calid = null, $gas = 
 		
 			$content = strip_tags($proteccion['Proteccione']['description'], $allow); 
 			$content = clean_inside_tags($content,$allow);
+			$img = empty($proteccion['Proteccione']['smallimage']) ? "" : '<img src="'.$proteccion['Proteccione']['smallimage'].'" />';
 			$html = '
 			<h1>Artículo de Protección</h1>
-			<p><img src="'.$proteccion['Proteccione']['smallimage'].'" /></p>
+			<p>'.$img.'</p>
 			<p>'.$proteccion['Proteccione']['name'].'</p>
 			<p>'.$content.'</p>
 			';
