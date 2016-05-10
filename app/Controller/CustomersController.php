@@ -36,7 +36,9 @@ class CustomersController extends AppController {
 			if ($this->Customer->save($this->request->data)) {
 				  $ch = curl_init();  
 				  $timeout = 5;  
-				  curl_setopt($ch,CURLOPT_URL,'http://tinyurl.com/api-create.php?url=http://www.infra.com.mx/selector'.$this->request->data['Customer']['page']);  
+				  $url = 'http://www.infra.com.mx/selector'.$this->request->data['Customer']['page'];
+				  $url = str_replace("/selector/selector/", "/selector/", $url);
+				  curl_setopt($ch,CURLOPT_URL,'http://tinyurl.com/api-create.php?url='.$url);  
 				  curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);  
 				  curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);  
 				  $this->request->data['Customer']['link'] = curl_exec($ch);  
