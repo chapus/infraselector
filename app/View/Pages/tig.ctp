@@ -289,6 +289,8 @@
 <!--
 $(document).ready(function() { 
 
+$("a#vtig").colorbox({inline:true,href:"#v_tig",maxWidth:"900px",maxHeight:"550px"});
+
 $.ajaxSetup({
   timeout: '9000'
 });

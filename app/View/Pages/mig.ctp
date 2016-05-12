@@ -259,6 +259,8 @@
 <!--
 $(document).ready(function() { 
 
+$("a#vmig").colorbox({inline:true,href:"#v_mig",maxWidth:"900px",maxHeight:"550px"});
+
 $.ajaxSetup({
   timeout: '9000'
 });
