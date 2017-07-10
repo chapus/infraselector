@@ -149,9 +149,9 @@ BrowserDetect.init();
         ?></h1>
         <span class="desc"><?= $this->Html->link('Selector de Procesos', '/'); ?></span>
     </div><!-- end #logo -->
-    <div class="information">Para comentarios y/o sugerencias sobre esta herramienta por favor escríbanos al correo: <span class="no-phone"><a href="mailto:rcampos@infra.com.mx">rcampos@infra.com.mx</a></span></div>
+    <div class="information"><!-- Para comentarios y/o sugerencias sobre esta herramienta por favor escríbanos al correo: <span class="no-phone"><a href="mailto:rcampos@infra.com.mx">rcampos@infra.com.mx</a></span> --></div>
     <br /> 
-    <div class="information">O comuníquese al teléfono: <span class="no-phone">(55) 5329.3007 con el Ing. Rubí Campos</span></div>
+    <div class="information"><!-- O comuníquese al teléfono: <span class="no-phone">(55) 5329.3007 con el Ing. Rubí Campos</span> --></div>
 
     <div class="info">
     <?php
